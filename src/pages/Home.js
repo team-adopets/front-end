@@ -11,7 +11,6 @@ export default function Home() {
       <Navbarcomp />
       <Headercomp />
       <Blogpost />
-      <Blogpost />
       <Footercomp />
     </div>
   );

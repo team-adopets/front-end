@@ -13,7 +13,6 @@ export default function App() {
       <Headercomp />
       <Blogpost />
       <Blogpost />
-      <Blogpost />
       <Footercomp />
     </div>
   );

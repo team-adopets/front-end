@@ -54,11 +54,10 @@ export default class Navbarcomp extends React.Component {
 
     const LogoutLink = () => (
       <Nav className="ml-auto" navbar>
-        <NavLink>
           <NavLink>Logout</NavLink>
-        </NavLink>
       </Nav>
     );
+    
     return (
       <div>
         <Navbar className="container" color="light" light expand="sm">

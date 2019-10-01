@@ -93,6 +93,17 @@ a {
 
 }
 
+/* card */
+.demo-card-header-pic .card-header {
+  height: 40vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.demo-card-header-pic .card-content-padding .date{
+  color: #8e8e93;
+}
+
 /* footer */
 .footer {
   padding: 20px;

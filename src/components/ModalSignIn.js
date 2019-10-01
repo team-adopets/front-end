@@ -1,25 +1,15 @@
 import React, { Component } from "react";
+import {Field, reduxForm} from "redux-form";
 
+import CustomInput from "./CustomInput";
 class ModalSignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      password: ""
-    };
+
+  onSubmit = (formData) => {
+  
+    console.log(formData, "===form data===");
   }
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-  };
-
   render() {
+    const { handleSubmit } = this.props;
     return (
       <div>
         <div
@@ -46,36 +36,32 @@ class ModalSignIn extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Enter email"
+                <form onSubmit={handleSubmit(this.onSubmit)}>
+                  <fieldset>
+                  <Field
                       name="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
+                      type="email"
+                      id="email"
+                      label="Enter your email"
+                      placeholder="enter your email"
+                      component={CustomInput}
                     />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="Password"
+                  </fieldset>
+                  <Field
                       name="password"
-                      value={this.state.password}
-                      onChange={this.handleChange}
+                      type="password"
+                      id="password"
+                      label="Enter your password"
+                      placeholder="*******"
+                      component={CustomInput}
                     />
-                  </div>
                 </form>
               </div>
               <div className="modal-footer">
                 <button
                   type="submit"
                   data-dismiss="modal"
-                  onClick={this.handleSubmit}
+                  onClick={handleSubmit(this.onSubmit)}
                   className="btn btn-primary"
                 >
                   Submit
@@ -89,4 +75,4 @@ class ModalSignIn extends Component {
   }
 }
 
-export default ModalSignIn;
+export default reduxForm({ form: "signin"})(ModalSignIn);

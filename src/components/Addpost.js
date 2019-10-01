@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 import ReactFilestack from "filestack-react";
+import { Field, reduxForm } from "redux-form";
+
+import CustomInput from "./CustomInput";
 
 class Addpost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      content: "",
-      files: "",
+      imgUrl: "",
       previewImg: ""
     };
   }
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+
+  onSubmit = formData => {
+    const { imgUrl } = this.state;
+    const newPost = {
+      ...formData,
+      imgUrl
+    };
+    console.log(newPost, "new post data");
+    
   };
-  handleSubmit = e => {
-    e.preventDefault();
-  };
+
   render() {
+    console.log(this.props, "this.props");
+
+    const { handleSubmit } = this.props;
     return (
       <div>
         <div
@@ -46,35 +53,33 @@ class Addpost extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label>Title :</label>
-                    {/* input for title blog post here */}
-                    <input
-                      type="text"
-                      className="input-add"
+                <form onSubmit={handleSubmit(this.onSubmit)}>
+                  <fieldset>
+                    <Field
                       name="title"
-                      value={this.state.title}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Content :</label>
-                    {/* input for content blog post here */}
-                    <input
                       type="text"
-                      className="input-add add-post"
-                      name="content"
-                      value={this.state.content}
-                      onChange={this.handleChange}
+                      id="title"
+                      label="Title"
+                      placeholder="Enter your title"
+                      component={CustomInput}
                     />
-                  </div>
+                  </fieldset>
+                  <fieldset>
+                    <Field
+                      name="content"
+                      type="text"
+                      id="content"
+                      label="Content"
+                      placeholder="Enter your content"
+                      component={CustomInput}
+                    />
+                  </fieldset>
                   <div className="input-file">
                     <ReactFilestack
                       apikey={`ApZlTzBaiT6OTIZ2Qu5uZz`}
                       onSuccess={result => {
                         this.setState({
-                          files: result.filesUploaded[0].url,
+                          imgUrl: result.filesUploaded[0].url,
                           previewImg: result.filesUploaded[0].originalFile.name
                         });
                       }}
@@ -87,7 +92,7 @@ class Addpost extends Component {
                 type="button"
                 className="btn btn-add btn-lg btnt-block btn-outline-danger"
                 data-dismiss="modal"
-                onClick={this.handleSubmit}
+                onClick={handleSubmit(this.onSubmit)}
               >
                 Add
               </button>
@@ -99,4 +104,4 @@ class Addpost extends Component {
   }
 }
 
-export default Addpost;
+export default reduxForm({ form: "addpost"})(Addpost);

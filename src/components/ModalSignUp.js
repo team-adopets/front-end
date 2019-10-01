@@ -1,30 +1,32 @@
 import React, { Component } from "react";
 import ReactFilestack from "filestack-react";
+import { Field, reduxForm } from "redux-form";
+/*
+1) import {connect} from react-redux
+2) import {compose} from redux
+3) import * from action folder
+*/
 
 
+import CustomInput from "./CustomInput";
 class ModalSignUp extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props){
+    super(props)
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      files: "",
+      imgUrl: "",
       previewImg: ""
-    };
+    }
   }
-
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-  };
-
+  onSubmit = (formData) => {
+    console.log(formData, "form data");
+    const newUser = {
+      ...formData,
+      imgUrl: this.state.imgUrl,
+    }
+    console.log(newUser, "new data");
+  }
   render() {
+    const { handleSubmit } = this.props;
     return (
       <div>
         <div
@@ -51,53 +53,52 @@ class ModalSignUp extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label>Name</label>
-                    <input
-                      type="text"
-                      className="form-control"
+                <form onSubmit={handleSubmit(this.onSubmit)}>
+                  <fieldset>
+                    <Field
                       name="name"
-                      onChange={this.handleChange}
-                      value={this.state.name}
-                      placeholder="Enter name"
+                      type="text"
+                      id="name"
+                      label="Name"
+                      placeholder="Enter your name"
+                      component={CustomInput}
                     />
-                  </div>
-                  <div className="form-group">
-                    <label>Email</label>
-                    <input
-                      type="email"
-                      className="form-control"
+                  </fieldset>
+                  <fieldset>
+                    <Field
                       name="email"
-                      onChange={this.handleChange}
-                      value={this.state.email}
-                      placeholder="Enter email"
+                      type="email"
+                      id="email"
+                      label="Email"
+                      placehoder="Enter your email"
+                      component={CustomInput}
                     />
+
                     <small id="emailHelp" className="form-text">
                       We'll never share your email with anyone else.
                     </small>
-                  </div>
-                  <div className="form-group">
-                    <label>Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
+                  </fieldset>
+                  <fieldset>
+                    <Field
                       name="password"
-                      onChange={this.handleChange}
-                      value={this.state.password}
-                      placeholder="Enter password"
+                      type="password"
+                      id="password"
+                      label="Enter your password"
+                      placeholder="******"
+                      component={CustomInput}
                     />
                     <small id="passHelp" className="form-text">
                       We'll never share your password too.
                     </small>
-                  </div>
+                  </fieldset>
+
                   <div className="profileimg">
                     <label htmlFor="">Profile Image:</label>
                     <ReactFilestack
                       apikey={`ApZlTzBaiT6OTIZ2Qu5uZz`}
                       onSuccess={result => {
                         this.setState({
-                          files: result.filesUploaded[0].url,
+                          imgUrl: result.filesUploaded[0].url,
                           previewImg: result.filesUploaded[0].originalFile.name
                         });
                       }}
@@ -113,7 +114,7 @@ class ModalSignUp extends Component {
                   type="submit"
                   data-dismiss="modal"
                   className="btn btn-primary"
-                  onClick={this.handleSubmit}
+                  onClick={handleSubmit(this.onSubmit)}
                 >
                   Submit
                 </button>
@@ -126,4 +127,11 @@ class ModalSignUp extends Component {
   }
 }
 
-export default ModalSignUp;
+/*
+  export default compose ({
+    connect(state,actions),
+    reduxform({ form : "signup"})
+  })(ModalSignUp)
+*/
+
+export default reduxForm({ form : "signup"})(ModalSignUp);
