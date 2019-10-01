@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:600&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-weight: 100;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+.heading-title{
+  font-weight: bolder;
+}
+
+/* blog post component */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+  height: 200px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* floating button */
+.fab {
+  width: 70px;
+  height: 70px;
+  background-color: #c82433;
+  border-radius: 50%;
+  box-shadow: 0 6px 10px 0 rgb(158, 157, 157);
+  transition: all 0.1s ease-in-out;
+
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+.fab:hover {
+  box-shadow: 0 6px 14px 0 rgb(156, 154, 154);
+  transform: scale(1.05);
+}
+
+/* button add in modal addpost */
+.btn-add {
+  margin: 10px 10px;
+}
+
+/* comment input */
+.comment-input {
+  height: 100px;
+}
+
+/* input add post */
+.input-add{
+  margin-left: 10px;
+}
+.add-post{
+  height: 100px;
+  width: 400px;
+}
+
+/* email and password help id */
+.form-text{
+  color: #c70d3a;
+
+}
+
+/* footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
