@@ -14,6 +14,7 @@ class Blogpost extends Component {
               src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg"
               width="100%"
               height="310px"
+              background-size="cover"
             />
             <p>
               Sunt in culpa qui officia deserunt mollit anim id est laborum

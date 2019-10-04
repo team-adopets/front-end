@@ -4,7 +4,7 @@ import { Field, reduxForm } from "redux-form";
 /*
 1) import {connect} from react-redux
 2) import {compose} from redux
-3) import * from action folder
+3) import * as actions from action folder
 */
 
 
@@ -23,8 +23,12 @@ class ModalSignUp extends Component {
       ...formData,
       imgUrl: this.state.imgUrl,
     }
-    console.log(newUser, "new data");
+    /* this.props.signUp(newUser) */
+    console.log(newUser);
+    
   }
+
+  
   render() {
     const { handleSubmit } = this.props;
     return (

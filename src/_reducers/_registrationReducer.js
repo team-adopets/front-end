@@ -1,24 +1,32 @@
 import {userTypes} from "../_actions/types/_userTypes"
 
-const initialState = {
-    data: {},
-    isSignUp: false
-}
-
-export const registrationReducer = (state=initialState, action) => {
+export const registrationReducer = (state={}, action) => {
     switch (action.type) {
         case userTypes.USER_SIGNUP :
             return {
                 ...state,
-                name : action.payload,
-                email: action.payload,
-                password: action.payload,
-                imgUrl: action.payload
+                username : action.data.username,
+                email: action.data.email,
+                password: action.data.password,
+                imgUrl: action.data.imgUrl
             }  
         
         case userTypes.USER_SIGNUP_SUCCESS:
             return {
-                isSignUp : true
+                ...state,
+                isSignUp : true,
+            }
+
+        case userTypes.USER_SIGNUP_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+
+        case userTypes.USER_SIGNUP_REQUEST:
+            return {
+                ...state,
+                requesting: true
             }
         default:
             return state;

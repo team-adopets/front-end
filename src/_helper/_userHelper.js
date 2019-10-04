@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:3100/user/";
+import {authHeader} from "./_authHelper";
+
+const API_URL = "http://localhost:3100/users";
 
 const login = (username, password) => {
   const requestOptions = {
@@ -7,7 +9,7 @@ const login = (username, password) => {
     body: JSON.stringify({ username, password })
   };
 
-  return fetch(`${API_URL}/user/`, requestOptions)
+  return fetch(`${API_URL}/signin`, requestOptions)
     .then(handleResponse)
     .then(user => {
       // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -26,16 +28,53 @@ const register = user => {
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: user /*JSON.stringify(user)*/
+    body: JSON.stringify(user)
   };
 
-  return fetch(`${API_URL}/users/signup`, requestOptions).then(
-    handleResponse
-  );
+  return fetch(`${API_URL}/signup`, requestOptions).then(handleResponse);
 };
 
 
-const handleResponse = response => {
+const getAll= () => {
+  const requestOptions = {
+      method: 'GET',
+      headers: authHeader()
+  };
+
+  return fetch(`${API_URL}`, requestOptions).then(handleResponse);
+};
+
+const getById = (id) => {
+  const requestOptions = {
+      method: 'GET',
+      headers: authHeader()
+  };
+
+  return fetch(`${API_URL}/${id}`, requestOptions).then(handleResponse);
+}
+
+const update = (user) => {
+  const requestOptions = {
+      method: 'PUT',
+      headers: { ...authHeader(), 'Content-Type': 'application/json' },
+      body: JSON.stringify(user)
+  };
+
+  return fetch(`${API_URL}/${user.id}`, requestOptions).then(handleResponse);;
+}
+
+// prefixed function name with underscore because delete is a reserved word in javascript
+const _delete = (id) =>{
+  const requestOptions = {
+      method: 'DELETE',
+      headers: authHeader()
+  };
+
+  return fetch(`${API_URL}/${id}`, requestOptions).then(handleResponse);
+}
+
+
+function handleResponse (response) {
   return response.text().then(text => {
     const data = text && JSON.parse(text);
     if (!response.ok) {
@@ -58,4 +97,8 @@ export const userHelper = {
   login,
   logout,
   register,
+  getAll,
+  getById,
+  update,
+  _delete
 };
