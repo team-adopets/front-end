@@ -1,78 +1,93 @@
 import React, { Component } from "react";
-import {Field, reduxForm} from "redux-form";
+import { Field, reduxForm } from "redux-form";
+import {
+  Button,
+  NavLink,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import CustomInput from "./CustomInput";
+import "../App.scss"
 class ModalSignIn extends Component {
-
-  onSubmit = (formData) => {
-  
-    console.log(formData, "===form data===");
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
   }
+
+  toggle = () => {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  };
+  onSubmit = formData => {
+    console.log(formData, "===form data===");
+  };
   render() {
     const { handleSubmit } = this.props;
+    const closeBtn = (
+      <button className="close" onClick={this.toggle}>
+        &times;
+      </button>
+    );
     return (
       <div>
-        <div
-          className="modal fade"
-          id="modalSignin"
-          tabIndex="-1"
-          role="dialog"
-          aria-labelledby="modalSignin"
-          aria-hidden="true"
+        <NavLink color="danger" onClick={this.toggle}>
+          <FontAwesomeIcon className="user_icon" icon={faUser} />
+        </NavLink>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}
         >
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="modalSignin">
-                  Sign in Form
-                </h5>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <form onSubmit={handleSubmit(this.onSubmit)}>
-                  <fieldset>
-                  <Field
-                      name="email"
-                      type="email"
-                      id="email"
-                      label="Enter your email"
-                      placeholder="enter your email"
-                      component={CustomInput}
-                    />
-                  </fieldset>
-                  <Field
-                      name="password"
-                      type="password"
-                      id="password"
-                      label="Enter your password"
-                      placeholder="*******"
-                      component={CustomInput}
-                    />
-                </form>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="submit"
-                  data-dismiss="modal"
-                  onClick={handleSubmit(this.onSubmit)}
-                  className="btn btn-primary"
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+          <ModalHeader toggle={this.toggle} close={closeBtn}>
+            Sign In
+          </ModalHeader>
+          <FontAwesomeIcon icon="user" />
+
+          <ModalBody>
+            <form onSubmit={handleSubmit(this.onSubmit)}>
+              <fieldset>
+                <Field
+                  name="email"
+                  type="email"
+                  id="email"
+                  label="Enter your email"
+                  placeholder="enter your email"
+                  component={CustomInput}
+                />
+              </fieldset>
+              <Field
+                name="password"
+                type="password"
+                id="password"
+                label="Enter your password"
+                placeholder="*******"
+                component={CustomInput}
+              />
+            </form>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              color="danger"
+              onClick={(handleSubmit(this.onSubmit), this.toggle)}
+            >
+              Do Something
+            </Button>{" "}
+            <Button color="secondary" onClick={this.toggle}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
       </div>
     );
   }
 }
 
-export default reduxForm({ form: "signin"})(ModalSignIn);
+export default reduxForm({ form: "signin" })(ModalSignIn);

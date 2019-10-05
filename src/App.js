@@ -1,10 +1,7 @@
 import React from "react";
-
-import Navbarcomp from "./components/Navbarcomp";
-import Headercomp from "./components/Headercomp";
-import Blogpost from "./components/Blogpost";
-import Footercomp from "./components/Footercomp";
-
+import Navbarcomp from "./sections/Navbarcomp";
+import Headercomp from "./sections/Headercomp";
+import Footercomp from "./sections/Footercomp";
 import "./App.scss";
 
 export default function App() {
@@ -12,9 +9,7 @@ export default function App() {
     <div>
       <Navbarcomp />
       <Headercomp />
-      <Blogpost />
-      <Blogpost />
-      <Footercomp />
+      <Footercomp/>
     </div>
   );
 }

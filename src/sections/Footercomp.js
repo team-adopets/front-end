@@ -1,5 +1,5 @@
 import React from "react";
-import Addpost from "./Addpost";
+// import Addpost from "./Addpost";
 import "../App.scss";
 
 const Footercomp = () => {
@@ -9,16 +9,16 @@ const Footercomp = () => {
         <h5>JANTOMOTULO</h5>
       </div>
       <div>
-            <button
+            {/* <button
               type="button"
               className="fab"
               data-toggle="modal"
               data-target="#floatbutton"
             >
               +
-            </button>
+            </button> */}
           </div>
-          <Addpost />
+          {/* <Addpost /> */}
     </div>
   );
 };
