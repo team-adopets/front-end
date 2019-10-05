@@ -100,5 +100,5 @@ export const userHelper = {
   getAll,
   getById,
   update,
-  _delete
+  delete: _delete
 };

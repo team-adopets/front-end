@@ -5,6 +5,7 @@ import Headercomp from "./components/Headercomp";
 import Blogpost from "./components/Blogpost";
 import Footercomp from "./components/Footercomp";
 
+import "./App.scss";
 
 export default function App() {
   return (

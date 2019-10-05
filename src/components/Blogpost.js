@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import "../index.scss";
+import "../App.scss";
 
 class Blogpost extends Component {
   render() {
     return (
+      <div className="container">
       <div className="row">
-        <div className="col-lg">
-          <div className="card container">
+        <div className="col-md">
+          <div className="card">
             <h2 className="heading-title">TITLE HEADING</h2>
             <h5>Title description, Dec 7, 2017</h5>
             <p>Author name</p>
@@ -34,6 +35,7 @@ class Blogpost extends Component {
             />
           </div>
         </div>
+      </div>
       </div>
       // <div>
       //   <BlockTitle>All blogpost</BlockTitle>

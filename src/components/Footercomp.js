@@ -1,6 +1,6 @@
 import React from "react";
 import Addpost from "./Addpost";
-import "../index.scss";
+import "../App.scss";
 
 const Footercomp = () => {
   return (

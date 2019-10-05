@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import ReactFilestack from "filestack-react";
 import { Field, reduxForm } from "redux-form";
-/*
-1) import {connect} from react-redux
-2) import {compose} from redux
-3) import * as actions from action folder
-*/
+import {connect} from "react-redux";
+import {compose} from "redux";
+import * as actions from "../_actions/"
 
 
 import CustomInput from "./CustomInput";
@@ -17,13 +15,15 @@ class ModalSignUp extends Component {
       previewImg: ""
     }
   }
-  onSubmit = (formData) => {
+  onSubmit = async (formData) => {
     console.log(formData, "form data");
     const newUser = {
       ...formData,
       imgUrl: this.state.imgUrl,
     }
-    /* this.props.signUp(newUser) */
+    console.log(this.props.actions);
+    
+    /* await this.props.signup(newUser) */
     console.log(newUser);
     
   }
@@ -131,11 +131,9 @@ class ModalSignUp extends Component {
   }
 }
 
-/*
-  export default compose ({
-    connect(state,actions),
-    reduxform({ form : "signup"})
-  })(ModalSignUp)
-*/
 
-export default reduxForm({ form : "signup"})(ModalSignUp);
+  export default compose(
+    connect(null, actions),
+    reduxForm({ form : "signup"})
+  )(ModalSignUp)
+
