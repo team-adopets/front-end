@@ -1,17 +1,19 @@
 import React from "react";
-import Navbarcomp from "./components/Navbarcomp";
-import Headercomp from "./components/Headercomp";
+import Navbarcomp from "./sections/Navbarcomp";
+import Headercomp from "./sections/Headercomp";
+import Mainsection from "./sections/Mainsection";
+import Footercomp from "./sections/Footercomp";
+
 import "./App.scss";
-import Banner from "./components/Banner";
+
 
 export default function App() {
   return (
     <div>
       <Navbarcomp />
       <Headercomp />
-      <Banner title="Lambrador Retriever"/>
-      <Banner title="French Buldog"/>
-      <Banner title="Beagel"/>
+      <Mainsection/>
+      <Footercomp/>
     </div>
   );
 }

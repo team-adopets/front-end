@@ -1,41 +1,109 @@
 $primary-color: #91b237;
 $white: #fff;
-$gray: #e5e5e5;
+$primary-gray: #e5e5e5;
+$secondary-gray: #929292;
+
+p {
+    margin-bottom: 0;
+    margin-top: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h5 {
+    display: block;
+    // font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-top: 20px;
+    // font-weight: bold;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.pt-30{
+    padding-top: 30px;
+}
+
+.section-spacer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+@media (min-width: 768px) {
+    .section-spacer {
+        padding-top: 62px;
+        padding-bottom: 62px;
+      }
+}
+
 
 /* banner section */
 .banner {
-    text-align: center;
-    background-color:$gray;
-    color: black;
-    width: 100%;
-    height: 300px;
-    padding-top: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
+  text-align: center;
+  background-color: $primary-gray;
+  color: black;
+  width: 100%;
+  height: 300px;
+  padding-top: 20px;
+  border-radius: 8px;
+
 }
 
 .banner-title {
-    color:$white;
+  color: $white;
 }
 
 .store-link {
-    font-size: 14px;
-    color: #242424;
-    font-weight: 500;
-    line-height: 1;
-    display: inline-block;
-    position: relative;
-    text-transform: capitalize;
-    margin-top: 15px;
-    pointer-events: visible;
+  font-size: 14px;
+  color: #242424;
+  font-weight: 500;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  text-transform: capitalize;
+  margin-top: 15px;
+  pointer-events: visible;
 }
 
 .store-link:after {
-    bottom: -7px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    content: "";
-    position: absolute;
-    background-color: $primary-color;
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: $primary-color;
 }
+/* end of banner section */
+
+/* service policy section */
+
+.service-policy-item{
+    text-align: center;
+    p {
+        color: $primary-gray;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+}
+/* service policy end */
+
+/* footer section */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* footer section end */
