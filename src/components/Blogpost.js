@@ -37,47 +37,6 @@ class Blogpost extends Component {
         </div>
       </div>
       </div>
-      // <div>
-      //   <BlockTitle>All blogpost</BlockTitle>
-      //   <Block>
-      //     <Row>
-      //       <Col>
-      //         <Card className="demo-facebook-card card-expandable">
-      //           <CardHeader className="no-border">
-      //             <div className="demo-facebook-avatar">
-      //               <img
-      //                 src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg"
-      //                 width="100"
-      //                 height="100"
-      //               />
-      //             </div>
-      //             <div className="demo-facebook-name">John Doe</div>
-      //             <div className="demo-facebook-date">Monday at 3:47 PM</div>
-      //           </CardHeader>
-      //           <CardContent padding={false}>
-      //             <img
-      //               src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg"
-      //               width="100%"
-      //               height="350px"
-      //             />
-      //             <div class="card-content card-content-padding">
-      //               <p class="date">Posted on January 21, 2015</p>
-      //               <p>
-      //                 Quisque eget vestibulum nulla. Quisque quis dui quis ex
-      //                 ultricies efficitur vitae non felis. Phasellus quis nibh
-      //                 hendrerit...
-      //               </p>
-      //             </div>
-      //           </CardContent>
-      //           <CardFooter className="no-border">
-      //             <BlockTitle>Comment</BlockTitle>
-      //             <textarea />
-      //           </CardFooter>
-      //         </Card>
-      //       </Col>
-      //     </Row>
-      //   </Block>
-      // </div>
     );
   }
 }

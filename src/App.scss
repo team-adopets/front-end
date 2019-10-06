@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Nunito:600&display=swap");
 
+$primary-color: #91b237;
+$white: #fff;
+$gray: #e5e5e5;
+
+
 /* Header/Blog Title */
 .site-blocks-cover {
   background-size: cover;
@@ -109,20 +114,6 @@
   }
 }
 
-/* blog post component */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-  height: 200px;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-}
-
 /* floating button */
 .fab {
   width: 70px;
@@ -147,22 +138,14 @@
   transform: scale(1.05);
 }
 
-/* button add in modal addpost */
-.btn-add {
-  margin: 10px 10px;
-}
-
-/* comment input */
-.comment-input {
-  height: 100px;
+/* btn primary */
+.btn_primary {
+  background-color: #91b237;
 }
 
 .nav-links {
   margin: 10px;
   cursor: pointer;
-}
-
-.nav-links:hover {
 }
 
 /* input add post */
@@ -176,7 +159,7 @@
 
 /* email and password help id */
 .form-text {
-  color: #c70d3a;
+  color: $primary-color;
 }
 
 /* card */
@@ -201,4 +184,21 @@
 /* icon icon */
 .user_icon {
   cursor: pointer;
+}
+
+/* section space */
+.section-space {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.section-space-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width : 769.98px){
+  .section-space{
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
 }

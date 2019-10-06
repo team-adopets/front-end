@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 
-export default class Cardcomp extends Component {
+class Productdesc extends Component {
   render() {
     return (
-      <div>
+      <div className="product">
         
       </div>
     );
   }
 }
+
+export default Productdesc;

@@ -1,0 +1,41 @@
+$primary-color: #91b237;
+$white: #fff;
+$gray: #e5e5e5;
+
+/* banner section */
+.banner {
+    text-align: center;
+    background-color:$gray;
+    color: black;
+    width: 100%;
+    height: 300px;
+    padding-top: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.banner-title {
+    color:$white;
+}
+
+.store-link {
+    font-size: 14px;
+    color: #242424;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-block;
+    position: relative;
+    text-transform: capitalize;
+    margin-top: 15px;
+    pointer-events: visible;
+}
+
+.store-link:after {
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    content: "";
+    position: absolute;
+    background-color: $primary-color;
+}

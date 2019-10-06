@@ -26,7 +26,7 @@ export default class Navbarcomp extends React.Component {
   render() {
     const Navlinks = props => (
       <NavItem>
-        <NavLink className="nav-links">{props.links}</NavLink>
+        <NavLink className="nav-links">{props.linkName}</NavLink>
       </NavItem>
     );
 
@@ -37,11 +37,11 @@ export default class Navbarcomp extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <Navlinks links="Home" />
-              <Navlinks links="Products" />
-              <Navlinks links="About" />
-              <Navlinks links="Contact" />
-              <Navlinks links="Signin" />
+              <Navlinks linkName="Home" />
+              <Navlinks linkName="Products" />
+              <Navlinks linkName="About" />
+              <Navlinks linkName="Contact" />
+              <Navlinks linkName="Signin" />
             </Nav>
           </Collapse>
         </Navbar>

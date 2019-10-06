@@ -27,7 +27,7 @@ class ModalSignIn extends Component {
     }));
   };
   onSubmit = formData => {
-    console.log(formData, "===form data===");
+    console.log(formData, "Redux Form Data");
   };
   render() {
     const { handleSubmit } = this.props;
@@ -79,7 +79,7 @@ class ModalSignIn extends Component {
               onClick={(handleSubmit(this.onSubmit), this.toggle)}
             >
               Do Something
-            </Button>{" "}
+            </Button>
             <Button color="secondary" onClick={this.toggle}>
               Cancel
             </Button>
