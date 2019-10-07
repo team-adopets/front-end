@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Bannercomp from "../components/Bannercomp";
 import ServicePolicy from "../components/ServicePolicy";
+import Productitem from "../components/Productitem";
+
 import {
   faHeadset,
   faPiggyBank,
@@ -59,6 +61,11 @@ export default class Mainsection extends Component {
                   <h2>Product Terbaru</h2>
                 </div>
               </div>
+            </div>
+            <div className="row">
+              <Productitem />
+              <Productitem />
+              <Productitem />
             </div>
           </div>
         </section>

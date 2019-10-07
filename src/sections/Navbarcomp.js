@@ -8,7 +8,7 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
-import { Link as Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,18 +28,6 @@ class Navbarcomp extends React.Component {
   };
 
   render() {
-    const IconLinks = props => (
-      <NavItem>
-        <NavLink>
-          <FontAwesomeIcon
-            className="nav-links"
-            icon={props.icons}
-            color="#91b237"
-            size="lg"
-          />
-        </NavLink>
-      </NavItem>
-    );
 
     return (
       <div>
@@ -52,49 +40,59 @@ class Navbarcomp extends React.Component {
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink>
-                  <Links className="nav-links" to="/">
+                  <Link
+                    style={{ textDecoration: "none", color: "#929292" }}
+                    to="/"
+                  >
                     Home
-                  </Links>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavLink>
-                <Links className="nav-links" to="/product">
+                <Link
+                  style={{ textDecoration: "none", color: "#929292" }}
+                  to="/product"
+                >
                   Products
-                </Links>
+                </Link>
               </NavLink>
 
               <NavItem>
                 <NavLink>
-                  <Links className="nav-links" to="/about">
+                  <Link
+                    style={{ textDecoration: "none", color: "#929292" }}
+                    to="/about"
+                  >
                     About
-                  </Links>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Links className="nav-links" to="/contact">
+                  <Link
+                    style={{ textDecoration: "none", color: "#929292" }}
+                    to="/contact"
+                  >
                     Contact
-                  </Links>
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <FontAwesomeIcon
-                  
-                    icon={faUser}
-                    color="#91b237"
-                    size="lg"
-                  />
+                  <Link to="/signin">
+                    <FontAwesomeIcon icon={faUser} color="#91b237" size="lg" />
+                  </Link>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <FontAwesomeIcon
-                   
-                    icon={faShoppingCart}
-                    color="#91b237"
-                    size="lg"
-                  />
+                  <Link to="/checkout">
+                    <FontAwesomeIcon
+                      icon={faShoppingCart}
+                      color="#91b237"
+                      size="lg"
+                    />
+                  </Link>
                 </NavLink>
               </NavItem>
             </Nav>
