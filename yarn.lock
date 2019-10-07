@@ -4599,11 +4599,6 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7-react@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/framework7-react/-/framework7-react-4.5.2.tgz#7ec321d80fa4491f311faaf5c4a25504e10c7f24"
-  integrity sha512-gl4RttN3iGuQJ673cUZKDbZyfeTgTmHor04Exm4aXa7+Gjklnbx42qR8c5I0QfVslSV4EzR9brbmpI6E3A8JvQ==
-
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -8866,10 +8861,23 @@ react-redux@^7.1.1:
     prop-types "^15.7.2"
     react-is "^16.9.0"
 
-react-router@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.1.1.tgz#9d65f54795f938c0c5b69eaeef58728134ce7c7c"
-  integrity sha512-ozTXqxKZsn4GfZqpG5rVFHSSxlNuDoMNxgyjM+mFJVhqlnPwwkRsAPkDm1PcNjBdYxMzqAhtz48HkQB6fSYaAQ==
+react-router-dom@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.1.2.tgz#06701b834352f44d37fbb6311f870f84c76b9c18"
+  integrity sha512-7BPHAaIwWpZS074UKaw1FjVdZBSVWEk8IuDXdB+OkLb8vd/WRQIpA4ag9WQk61aEfQs47wHyjWUoUGGZxpQXew==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    history "^4.9.0"
+    loose-envify "^1.3.1"
+    prop-types "^15.6.2"
+    react-router "5.1.2"
+    tiny-invariant "^1.0.2"
+    tiny-warning "^1.0.0"
+
+react-router@5.1.2, react-router@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.1.2.tgz#6ea51d789cb36a6be1ba5f7c0d48dd9e817d3418"
+  integrity sha512-yjEuMFy1ONK246B+rsa0cUam5OeAQ8pyclRDgpxuSCrAlJ1qN9uZ5IgyKC7gQg0w8OM50NXHEegPh/ks9YuR2A==
   dependencies:
     "@babel/runtime" "^7.1.2"
     history "^4.9.0"

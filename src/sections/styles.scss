@@ -164,3 +164,14 @@ $secondary-gray: #929292;
   }
 
 /* footer sections end */
+
+
+
+.nav-links {
+  margin: 10px;
+  cursor: pointer;
+  
+  :hover{
+    color: #91b237;
+  }
+}

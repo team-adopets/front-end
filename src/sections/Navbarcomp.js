@@ -8,9 +8,11 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
+import { Link as Links } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
+import "./styles.scss";
 class Navbarcomp extends React.Component {
   constructor(props) {
     super(props);
@@ -26,12 +28,6 @@ class Navbarcomp extends React.Component {
   };
 
   render() {
-    const Navlinks = props => (
-      <NavItem>
-        <NavLink className="nav-links">{props.linkName}</NavLink>
-      </NavItem>
-    );
-
     const IconLinks = props => (
       <NavItem>
         <NavLink>
@@ -54,12 +50,53 @@ class Navbarcomp extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <Navlinks linkName="Home" />
-              <Navlinks linkName="Products" />
-              <Navlinks linkName="About" />
-              <Navlinks linkName="Contact" />
-              <IconLinks icons={faUser} />
-              <IconLinks icons={faShoppingCart} />
+              <NavItem>
+                <NavLink>
+                  <Links className="nav-links" to="/">
+                    Home
+                  </Links>
+                </NavLink>
+              </NavItem>
+              <NavLink>
+                <Links className="nav-links" to="/product">
+                  Products
+                </Links>
+              </NavLink>
+
+              <NavItem>
+                <NavLink>
+                  <Links className="nav-links" to="/about">
+                    About
+                  </Links>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+                  <Links className="nav-links" to="/contact">
+                    Contact
+                  </Links>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+                  <FontAwesomeIcon
+                  
+                    icon={faUser}
+                    color="#91b237"
+                    size="lg"
+                  />
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+                  <FontAwesomeIcon
+                   
+                    icon={faShoppingCart}
+                    color="#91b237"
+                    size="lg"
+                  />
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
