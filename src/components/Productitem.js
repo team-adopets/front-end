@@ -6,6 +6,7 @@ const Productitem = () => {
     <div className="col-md-4 col-sm-4 mb-30">
       <div className="product-item">
         <div className="product-thumb overlay">
+          {/* <img src="../assets/siberianhusky.jpg" alt=""/> */}
           <div className="stock">5 STOCK</div>
           <div className="add-keranjang">Masukan Keranjang</div>
         </div>

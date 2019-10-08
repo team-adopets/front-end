@@ -53,6 +53,9 @@ h5 {
   height: 300px;
   padding-top: 20px;
   border-radius: 8px;
+  -webkit-box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
+  box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
 }
 
 .banner-title {
@@ -68,7 +71,9 @@ h5 {
   position: relative;
   text-transform: capitalize;
   margin-top: 15px;
-  pointer-events: visible;
+}
+.store-link a {
+  text-decoration: none;
 }
 
 .store-link:after {
@@ -115,7 +120,6 @@ h5 {
   cursor: pointer;
 }
 
-
 .product-thumb {
   background: url("../assets/siberianhusky.jpg");
   height: 400px;
@@ -126,6 +130,11 @@ h5 {
   position: relative;
   border-radius: 8px;
   cursor: pointer;
+  -webkit-box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
+  box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
+  animation-duration: 3s;
+  animation-name: fadeInLeft;
 }
 
 .stock {
@@ -142,7 +151,6 @@ h5 {
   justify-content: center;
 }
 
-
 .add-keranjang {
   height: 50px;
   width: 200px;
@@ -156,9 +164,17 @@ h5 {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  -webkit-box-shadow: -3px 2px 40px 6px rgba(255, 255, 255, 1);
+  -moz-box-shadow: -3px 2px 40px 6px rgba(255, 255, 255, 1);
+  box-shadow: -3px 2px 40px 6px rgba(255, 255, 255, 1);
 }
 
+.add-keranjang:hover {
+  color: #ddd;
+
+}
 /* product item */
+
 
 /* footer section */
 .footer {
@@ -168,4 +184,47 @@ h5 {
   margin-top: 20px;
 }
 
+/* sign in */
+.login-reg-form-wrap {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  padding: 23px 30px 30px;
+  width: 500px;
+}
+
+.btn__bg {
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 0;
+  background-color: $primary-color;
+}
+
+.forget-pwd {
+  color: $primary-color;
+  font-size: 12px;
+  margin-top: -6px;
+}
+/* sign in end here */
+
+
+@media only screen and (max-width: 575.98px) {
+  .login-reg-form-wrap {
+      padding: 23px 15px 30px;
+  }
+}
+
+
 /* footer section end */
+@keyframes pushReleaseFromTop {
+    from { transform: translateY(-100%) }
+    30% { transform: translateY(100px) }
+}
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  to { opacity: 1 }
+}
