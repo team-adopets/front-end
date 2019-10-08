@@ -22,12 +22,12 @@ const Headercomp = () => {
           </div>
           <div className="col-md-5 align-self-center text-center text-md-right">
             <img
-              src="images/dog_1.jpg"
+              src="assets/images/dog_1.jpg"
               alt="Image"
               className="img-fluid cover-img"
             />
             <img
-              src="images/dog_2.jpg"
+              src="assets/images/dog_2.jpg"
               alt="Image"
               className="img-fluid cover-img2"
             />

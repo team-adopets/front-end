@@ -25,7 +25,7 @@ class Navbarcomp extends React.Component {
             <a class="navbar-brand" href="#">
               <img
                 className="logo-brand"
-                src="../assets/logo.jpg"
+                src="assets/images/logo-brand.jpg"
                 width="30"
                 height="30"
                 class="d-inline-block align-top"
@@ -65,12 +65,12 @@ class Navbarcomp extends React.Component {
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <Link className="nav-link">
+                <Link className="nav-link" to="/signin">
                     <FontAwesomeIcon icon={faUser} color="#91b237" size="lg" />
                 </Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-link">
+                <Link className="nav-link" to="/checkout">
                 <FontAwesomeIcon
                     icon={faShoppingCart}
                     color="#91b237"
