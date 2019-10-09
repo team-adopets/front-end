@@ -1,5 +1,4 @@
 import {cartTypes} from "../_actions/types/_cartTypes"
-import { data } from "../data/index"
 
 const initState = {
     items: [

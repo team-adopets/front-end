@@ -8,7 +8,6 @@ export const registrationReducer = (state = {}, action) => {
         username: action.data.username,
         email: action.data.email,
         password: action.data.password,
-        imgUrl: action.data.imgUrl
       };
 
     case userTypes.USER_SIGNUP_SUCCESS:

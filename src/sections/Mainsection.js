@@ -11,6 +11,7 @@ import {
 import "./styles.scss";
 
 export default class Mainsection extends Component {
+  
   render() {
     return (
       <main className="main-section">
@@ -69,8 +70,6 @@ export default class Mainsection extends Component {
               <Productitem name="Thomas" price="1500" species="Purebred"/>
               <Productitem name="Thomas" price="1500" species="Purebred"/>
               <Productitem name="Thomas" price="1500" species="Purebred"/>
-
-
             </div>
           </div>
         </section>
