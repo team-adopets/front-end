@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { logoutUser } from "../actions/authentication";
+import { logoutUser } from "../actions/regisAction";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
@@ -27,7 +27,9 @@ class Navbarcomp extends React.Component {
   }
 
   render() {
-    const { isAuthenticated, user } = this.props;
+    const { isAuthenticated, user } = this.props.auth;
+    console.log(this.props);
+    
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -57,18 +59,18 @@ class Navbarcomp extends React.Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="nav navbar-nav">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/">
+              <li className="nav-item">
+                <Link className="nav_link" to="/">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/product">
+                <Link className="nav_link" to="/product">
                   Product
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav_link" to="/about">
                   About
                 </Link>
               </li>
@@ -76,20 +78,19 @@ class Navbarcomp extends React.Component {
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (
                 <li className="nav-item">
-                  <Link className="nav-link" onClick={this.onLogout}>
-                    <p>{user.name}</p>
-                  </Link>
+                  <p onClick={this.onLogout} className="font-icon">Janto</p>
                 </li>
               ) : (
                 <li className="nav-item">
-                  <Link className="nav-link" to="/signin">
-                    <FontAwesomeIcon icon={faUser} color="#91b237" size="lg" />
+                  <Link className="nav_link" to="/signin">
+                    <FontAwesomeIcon className="font-icon" icon={faUser} color="#91b237" size="lg" />
                   </Link>
                 </li>
               )}
               <li className="nav-item">
-                <Link className="nav-link" to="/cart">
+                <Link className="nav_link" to="/cart">
                   <FontAwesomeIcon
+                  className="font-icon"
                     icon={faShoppingCart}
                     color="#91b237"
                     size="lg"

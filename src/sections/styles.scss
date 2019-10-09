@@ -5,6 +5,26 @@ $white: #fff;
 $primary-gray: #e5e5e5;
 $secondary-gray: #929292;
 
+.navbar{
+  height: 80px;
+}
+
+.nav_link{
+  color: black;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  margin-right: 20px;
+}
+.nav_link:hover{
+    text-decoration: none;
+    color: #91b237;
+}
+
+.font-icon {
+  margin-top: 10px;
+  margin-right: 22px;
+  cursor: pointer;
+}
 
 .section-spacer {
   padding-top: 80px;
@@ -24,6 +44,15 @@ $secondary-gray: #929292;
   padding: 10px 20px;
   border-radius: 20px;
   background-color: #91b237;
+}
+.btn_adop{
+  color: #fff;
+  font-size: 19px;
+  background-color: #91b237;
+  border-radius: 5px;
+  height: 40px;
+  width: 140px;
+  letter-spacing: 1.5px;
 }
 
 /* logo brand */
@@ -197,17 +226,3 @@ $secondary-gray: #929292;
 
 /* footer sections end */
 
-
-
-.nav-links {
-  margin: 10px;
-  cursor: pointer;
-  
-  :hover{
-    color: #91b237;
-  }
-}
-
-.navbar{
-  height: 80px;
-}

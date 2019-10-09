@@ -14,7 +14,7 @@ const Headercomp = () => {
                 odio exercitationem iste, excepturi similique omnis.
               </p>
               <p>
-                <button className="btn__bg">ADOP PET</button>
+                <button className="btn_adop">REGISTER</button>
               </p>
             </div>
           </div>
