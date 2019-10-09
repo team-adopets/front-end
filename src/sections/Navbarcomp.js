@@ -1,5 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import { logoutUser } from "../actions/authentication";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./styles.scss";
@@ -17,7 +21,13 @@ class Navbarcomp extends React.Component {
     });
   };
 
+  onLogout = (e) => {
+    e.preventDefault();
+    this.props.logoutUser(this.props.history);
+  }
+
   render() {
+    const { isAuthenticated, user } = this.props;
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,14 +74,22 @@ class Navbarcomp extends React.Component {
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/signin">
+              {isAuthenticated ? (
+                <li className="nav-item">
+                  <Link className="nav-link" onClick={this.onLogout}>
+                    <p>{user.name}</p>
+                  </Link>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signin">
                     <FontAwesomeIcon icon={faUser} color="#91b237" size="lg" />
-                </Link>
-              </li>
+                  </Link>
+                </li>
+              )}
               <li className="nav-item">
                 <Link className="nav-link" to="/cart">
-                <FontAwesomeIcon
+                  <FontAwesomeIcon
                     icon={faShoppingCart}
                     color="#91b237"
                     size="lg"
@@ -86,4 +104,18 @@ class Navbarcomp extends React.Component {
   }
 }
 
-export default Navbarcomp;
+Navbarcomp.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { logoutUser }
+  )(Navbarcomp)
+);
