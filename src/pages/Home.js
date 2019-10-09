@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Headercomp from "../sections/Headercomp";
-import Mainsection from "../sections/Mainsection";
+import Headercomp from "../components/Headercomp";
+import Mainsection from "../components/Mainsection";
 
 class Home extends Component {
   render() {

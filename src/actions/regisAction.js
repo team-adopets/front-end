@@ -17,7 +17,7 @@ export const registerUser = (user, history) => dispatch => {
 
 export const loginUser = user => dispatch => {
   axios
-    .post("/api/users/login", user)
+    .post("http://localhost:8888/api/users/login", user)
     .then(res => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
@@ -44,5 +44,5 @@ export const logoutUser = history => dispatch => {
   localStorage.removeItem("jwtToken");
   setAuthToken(false);
   dispatch(setCurrentUser({}));
-  history.push("/login");
+  history.push("/");
 };

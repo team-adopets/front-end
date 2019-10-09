@@ -21,15 +21,15 @@ class Navbarcomp extends React.Component {
     });
   };
 
-  onLogout = (e) => {
+  onLogout = e => {
     e.preventDefault();
     this.props.logoutUser(this.props.history);
-  }
+  };
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
     console.log(this.props);
-    
+
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -78,19 +78,22 @@ class Navbarcomp extends React.Component {
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (
                 <li className="nav-item">
-                  <p onClick={this.onLogout} className="font-icon">Janto</p>
+                  <Link onClick={this.onLogout} to="/" className="nav_link">
+                    Logout
+                  </Link>
                 </li>
               ) : (
                 <li className="nav-item">
-                  <Link className="nav_link" to="/signin">
-                    <FontAwesomeIcon className="font-icon" icon={faUser} color="#91b237" size="lg" />
-                  </Link>
+                  <div>
+                    <Link className="nav_link" to="/signin">
+                      Login
+                    </Link>
+                  </div>
                 </li>
               )}
               <li className="nav-item">
                 <Link className="nav_link" to="/cart">
                   <FontAwesomeIcon
-                  className="font-icon"
                     icon={faShoppingCart}
                     color="#91b237"
                     size="lg"

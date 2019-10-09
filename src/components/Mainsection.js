@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import Bannercomp from "../components/Bannercomp";
-import ServicePolicy from "../components/ServicePolicy";
-import Productitem from "../components/Productitem";
+import ScrollAnimation from "react-animate-on-scroll";
+
+import Bannercomp from "./Bannercomp";
+import ServicePolicy from "./ServicePolicy";
+import Productitem from "./Productitem";
 
 import {
   faHeadset,
@@ -55,6 +57,7 @@ export default class Mainsection extends Component {
           </div>
         </section>
         <section className="trending-product section-spacer">
+        <ScrollAnimation animateIn="slideInLeft" duration={2}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -63,6 +66,7 @@ export default class Mainsection extends Component {
                 </div>
               </div>
             </div>
+
             <div className="row">
               <Productitem name="Thomas" price="1500" species="Purebred"/>
               <Productitem name="Thomas" price="1500" species="Purebred"/>
@@ -72,6 +76,7 @@ export default class Mainsection extends Component {
               <Productitem name="Thomas" price="1500" species="Purebred"/>
             </div>
           </div>
+          </ScrollAnimation>
         </section>
       </main>
     );
