@@ -1,12 +1,17 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../actions/regisAction";
+
 import CustomInput from "./CustomInput";
 import "./styles.scss";
 
 const Signin = props => {
   const onSubmit = formData => {
     console.log(formData, "form data redux-form");
+    loginUser(formData)
   };
   const { handleSubmit } = props;
   return (
@@ -60,4 +65,22 @@ const Signin = props => {
     </div>
   );
 };
-export default reduxForm({ form: "signin" })(Signin);
+
+Signin.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { loginUser }
+  )(reduxForm({ form: "signup" })(Signin))
+);
+

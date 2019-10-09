@@ -8,7 +8,6 @@ class Cartcomp extends Component {
         <h1 className="cart-title">Cart Component</h1>
         <div className="cart-body">
           <h4>Cart body</h4>
-          <h1>----------</h1>
         </div>
       </div>
     )

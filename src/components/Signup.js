@@ -8,12 +8,11 @@ import PropTypes from "prop-types";
 
 import CustomInput from "./CustomInput";
 
-
 import "./styles.scss";
 
 class Signup extends Component {
   onSubmit = formData => {
-    registerUser(formData, this.props.history)
+    registerUser(formData, this.props.history);
   };
   render() {
     const { handleSubmit } = this.props;
@@ -99,10 +98,14 @@ Signup.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
 
-export default withRouter(connect( mapStateToProps, {registerUser}) (reduxForm({ form: "signup" })(Signup)))
-
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { registerUser }
+  )(reduxForm({ form: "signup" })(Signup))
+);
