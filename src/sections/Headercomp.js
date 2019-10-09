@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.scss"
+import "./styles.scss";
 
 const Headercomp = () => {
   return (
@@ -14,9 +14,7 @@ const Headercomp = () => {
                 odio exercitationem iste, excepturi similique omnis.
               </p>
               <p>
-                <a href="#" className="btn btn-danger">
-                  ADOP PET
-                </a>
+                <button className="btn__bg">ADOP PET</button>
               </p>
             </div>
           </div>
