@@ -10,21 +10,39 @@ import Signup from "./components/Signup";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.scss";
-
+import Cartcomp from "./components/Cartcomp";
 
 export default function App() {
   return (
     <Router>
+      <div>
       <Navbarcomp />
-      {/* <Signup/> */}
-      {/* <Signin/> */}
-      <Home />
-        <Route exact path="/" to={Home} />
-        <Route path="/about" to={About} />
-        <Route path="/product" to={Productlist} />
-        <Route path="/contact" to={Contact} />
-        <Route path="/signin" to={Signin} />
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/about">
+          <About/>
+        </Route>
+        <Route path="/product">
+          <Productlist/>
+        </Route>
+        <Route path="/contact">
+          <Contact/>
+        </Route>
+        <Route path="/signin">
+          <Signin/>
+        </Route>
+        <Route path="/signup">
+          <Signup/>
+        </Route>
+        <Route path="/cart">
+          <Cartcomp/>
+        </Route>
+      </Switch>
       <Footercom />
+      </div>
+      
     </Router>
   );
 }

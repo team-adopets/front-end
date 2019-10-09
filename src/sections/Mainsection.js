@@ -63,9 +63,14 @@ export default class Mainsection extends Component {
               </div>
             </div>
             <div className="row">
-              <Productitem />
-              <Productitem />
-              <Productitem />
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productitem name="Thomas" price="1500" species="Purebred"/>
+
+
             </div>
           </div>
         </section>

@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import {reducer as formReducer} from "redux-form";
 import {registrationReducer} from "./_registrationReducer"
-
+import cartReducer from "./_cartReducer";
 
 const rootReducer = combineReducers({
-  registrationReducer,
+  cartReducer, registrationReducer,
   form : formReducer
 });
 

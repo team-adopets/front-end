@@ -1,18 +1,13 @@
 import React, {Component} from 'react'
 import { Field, reduxForm } from "redux-form";
+import {Link} from "react-router-dom";
 import CustomInput from "./CustomInput";
 
 import "./styles.scss"
 
 class Signup extends Component{
-    onSubmit = async (formData) => {    
-        const newUser = {
-          ...formData,
-          imgUrl: this.state.imgUrl
-        };
-        /* await this.props.signup(newUser) */
-        console.log(newUser, "new user data")
-        
+    onSubmit = (formData) => {    
+       console.log(formData, "redux form data signup");
       };
     render(){
         const {handleSubmit} = this.props;
@@ -26,7 +21,7 @@ class Signup extends Component{
                 className="login-reg-form-wrap"
                 style={{ width: "450px !important" }}
               >
-                <h2>Login</h2>
+                <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit(this.onSubmit)}>
               <fieldset>
                 <Field
@@ -66,9 +61,12 @@ class Signup extends Component{
                 <small id="passHelp" className="form-text">
                   We'll never share your email, phone number, and password.
                 </small>
+                <div>
+                    <button onClick={handleSubmit(this.onSubmit)} className="btn__bg btn-block">Sign in</button>
+                  </div>
               </fieldset>
               <p>
-                  Sudah punya akun? Login di <a href="" className="forget-pwd">sini</a>
+                  Sudah punya akun? Login di <Link to="/signin" className="forget-pwd">sini</Link>
               </p>
             </form>
               </div>

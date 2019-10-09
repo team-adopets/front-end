@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import { Link } from "react-router-dom";
 import CustomInput from "./CustomInput";
 import "./styles.scss";
 
@@ -37,7 +38,7 @@ const Signin = props => {
                     component={CustomInput}
                   />
                   <div>
-                    <button className="btn__bg btn-block">Sign in</button>
+                    <button onClick={handleSubmit(onSubmit)} className="btn__bg btn-block">Sign in</button>
                   </div>
                   <p>
                     <a href="#" className="forget-pwd">
@@ -46,9 +47,9 @@ const Signin = props => {
                   </p>
                   <p>
                     "Belum punya akun? register di
-                    <a href="" className="forget-pwd">
+                    <Link to="/signup" href="" className="forget-pwd">
                       sini
-                    </a>
+                    </Link>
                   </p>
                 </form>
               </div>

@@ -1,15 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Asap:700&display=swap');
+
 $primary-color: #91b237;
 $white: #fff;
 $primary-gray: #e5e5e5;
 $secondary-gray: #929292;
 
+
 .section-spacer {
   padding-top: 80px;
   padding-bottom: 80px;
-}
-
-.overlay{
-  
 }
 
 @media (min-width: 768px) {
@@ -22,6 +21,8 @@ $secondary-gray: #929292;
 /* logo brand */
 .logo-brand{
   background-color: red;
+  height: 50px;
+  width: 60px;
 }
 
 .logo{
@@ -64,9 +65,11 @@ $secondary-gray: #929292;
     border: 20px solid #fff;
     -webkit-box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.3);
     box-shadow: 0 2px 20px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
   }
   
   .site-blocks-cover .cover-img2 {
+    border-radius: 18px;
     position: absolute;
     bottom: -100px;
     left: -100px;
@@ -85,6 +88,9 @@ $secondary-gray: #929292;
   .site-blocks-cover .intro-text {
     font-size: 16px;
     line-height: 1.5;
+  }
+  .title-header {
+    font-family: 'Asap', sans-serif;
   }
   
   @media (min-width: 768px) {
@@ -192,4 +198,8 @@ $secondary-gray: #929292;
   :hover{
     color: #91b237;
   }
+}
+
+.navbar{
+  height: 80px;
 }

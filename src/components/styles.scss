@@ -121,20 +121,19 @@ h5 {
 }
 
 .product-thumb {
-  background: url("../assets/siberianhusky.jpg");
-  height: 400px;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
+  box-shadow: 18px -10px 34px -12px rgba(0, 0, 0, 0.35);
+}
+.imgItem {
+  height: 330px;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  border-radius: 8px;
-  cursor: pointer;
-  -webkit-box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
-  -moz-box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
-  box-shadow: 17px -10px 25px -9px rgba(0, 0, 0, 0.44);
-  animation-duration: 3s;
-  animation-name: fadeInLeft;
 }
 
 .stock {
@@ -170,11 +169,10 @@ h5 {
 }
 
 .add-keranjang:hover {
-  color: #ddd;
-
+  color: $primary-color;
+  background-color: whitesmoke;
 }
 /* product item */
-
 
 /* footer section */
 .footer {
@@ -208,23 +206,41 @@ h5 {
 }
 /* sign in end here */
 
+/* cart component */
+.cart-title {
+  font-size: 20px;
+  text-align: center;
+}
+.cart-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* cart component end here */
 
 @media only screen and (max-width: 575.98px) {
   .login-reg-form-wrap {
-      padding: 23px 15px 30px;
+    padding: 23px 15px 30px;
   }
 }
-
 
 /* footer section end */
 @keyframes pushReleaseFromTop {
-    from { transform: translateY(-100%) }
-    30% { transform: translateY(100px) }
+  from {
+    transform: translateY(-100%);
+  }
+  30% {
+    transform: translateY(100px);
+  }
 }
 @keyframes fadeInLeft {
   from {
-      opacity: 0;
-      transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  to { opacity: 1 }
+  to {
+    opacity: 1;
+  }
 }
