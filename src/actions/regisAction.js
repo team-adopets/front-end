@@ -6,8 +6,9 @@ import jwt_decode from "jwt-decode";
 export const registerUser = (user, history) => dispatch => {
   axios
     .post("http://localhost:8888/api/users/register", user)
-    .then(res => history.push("/login"))
+    .then(history.push("/signin"))
     .catch(err => {
+      console.log(err, "error regis user");
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
@@ -15,7 +16,7 @@ export const registerUser = (user, history) => dispatch => {
     });
 };
 
-export const loginUser = user => dispatch => {
+export const loginUser = (user, history) => dispatch => {
   axios
     .post("http://localhost:8888/api/users/login", user)
     .then(res => {
@@ -28,7 +29,7 @@ export const loginUser = user => dispatch => {
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
+        payload: err
       });
     });
 };

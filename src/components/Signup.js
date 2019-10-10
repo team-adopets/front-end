@@ -35,8 +35,10 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirm: this.state.password_confirm
-    };
+    };  
     this.props.registerUser(user, this.props.history);
+ 
+    
   }
 
   componentWillReceiveProps(nextProps) {

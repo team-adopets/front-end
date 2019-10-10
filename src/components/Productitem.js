@@ -8,7 +8,7 @@ const Productitem = props => {
       <div className="product-item">
         <div className="product-thumb overlay">
           <img className="imgItem" src={props.imgUrl} alt=""/>
-          <div className="stock">5 STOCK</div>
+          {/* <div className="stock">5 STOCK</div> */}
           <div className="add-keranjang">Masukan Keranjang</div>
         </div>
 

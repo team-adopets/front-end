@@ -42,7 +42,6 @@ export default function App() {
       </Switch>
       <Footercom />
       </div>
-      
     </Router>
   );
 }

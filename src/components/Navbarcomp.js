@@ -32,19 +32,6 @@ class Navbarcomp extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <div className="logo">
-            <a className="navbar-brand" href="#">
-              <img
-                className="logo-brand"
-                src="assets/images/logo2.jpg"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-                alt="logo"
-              />
-            </a>
-          </div>
-
           <button
             className="navbar-toggler"
             type="button"
@@ -78,7 +65,7 @@ class Navbarcomp extends React.Component {
               {isAuthenticated ? (
                 <li className="nav-item">
                   <Link onClick={this.onLogout} to="/" className="nav_link">
-                    Logout
+                    Logout, {user.name}
                   </Link>
                 </li>
               ) : (

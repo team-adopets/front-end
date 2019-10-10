@@ -19,6 +19,8 @@ class Signin extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  
+  
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -36,7 +38,7 @@ class Signin extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
+      this.props.history.push("");
     }
   }
 
@@ -53,7 +55,9 @@ class Signin extends Component {
 
   render() {
     const { errors } = this.state;
+  
     return (
+      
       <div className="login section-spacer">
         <div className="container">
           <div className="member-area-from-wrap">
@@ -128,7 +132,9 @@ Signin.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => (
+  console.log(state, "state to props"),
+  {
   auth: state.auth,
   errors: state.errors
 });
@@ -138,26 +144,3 @@ export default connect(
   { loginUser }
 )(Signin);
 
-// <p>
-//   "Belum punya akun? register di
-//   <Link to="/signup" href="" className="forget-pwd">
-//     sini
-//   </Link>
-// </p>
-// <div className="login section-spacer">
-//   <div className="container">
-//     <div className="member-area-from-wrap">
-//       <div className="row text-center">
-//         <div className="col d-flex justify-content-center">
-//           <div
-//             className="login-reg-form-wrap"
-//             style={{ width: "450px !important" }}
-//           >
-//             <h2>Login</h2>
-
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </div>

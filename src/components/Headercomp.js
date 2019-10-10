@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.scss";
 
 const Headercomp = () => {
+ 
   return (
     <section className="site-blocks-cover overflow-hidden bg-light">
       <div className="container">
@@ -14,7 +15,9 @@ const Headercomp = () => {
                 odio exercitationem iste, excepturi similique omnis.
               </p>
               <p>
-                <button className="btn_adop">REGISTER</button>
+                <button className="btn_adop">
+                  Register
+                </button>
               </p>
             </div>
           </div>
