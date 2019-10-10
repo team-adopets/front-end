@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import "./styles.scss";
 class Navbarcomp extends React.Component {
   constructor(props) {
@@ -28,7 +28,6 @@ class Navbarcomp extends React.Component {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-    console.log(this.props);
 
     return (
       <div>
