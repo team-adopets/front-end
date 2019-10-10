@@ -3,6 +3,21 @@ $white: #fff;
 $primary-gray: #e5e5e5;
 $secondary-gray: #929292;
 
+.mr-10{
+  margin-right: 10px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+
+.card-title{
+  color: $secondary-gray;
+}
+
+.card-text-2{
+  color: $primary-color;
+}
+
 .product-list {
   padding-top: 40px;
   margin-left: 50px;

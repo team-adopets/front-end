@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {addToCart} from "../actions/cartAction"
-// import "./styles.scss";
+import { addToCart } from "../actions/cartAction";
+import { Link } from "react-router-dom"
+import "./styles.scss";
 class Productlist extends Component {
   handleClick = id => {
     this.props.addToCart(id);
@@ -12,38 +13,37 @@ class Productlist extends Component {
     const { items } = this.props;
     let itemList = items.map(item => {
       return (
-        <div className="card" key={item.id}>
-          <div className="card-image">
-            <img src={item.img} alt={item.title} />
-            <span className="card-title">{item.title}</span>
-            <span
-              to="/"
-              className="btn-floating halfway-fab waves-effect waves-light red"
-            >
-              <i
+        <div className="col-md-4 col-sm-4 mt-30">
+          <div className="card" style={{ width: "18rem" }}>
+            <img src="" className="card-img-top" alt={item.title} />
+            <div className="card-body">
+              <h5 className="card-title">{item.title}</h5>
+              <p className="card-text">{item.desc}</p>
+              <p className="card-text-2">Price: {item.price}</p>
+              <Link
+                to="/product_desc"
+                className="btn btn-outline-success mr-10"
+              >
+                Details
+              </Link>
+              <Link
+                to="/cart"
+                className="btn btn-outline-dark"
                 onClick={() => {
                   this.handleClick(item.id);
                 }}
-                className="material-icons"
               >
-                add
-              </i>
-            </span>
-          </div>
-
-          <div className="card-content">
-            <p>{item.desc}</p>
-            <p>
-              <b>Price: {item.price}$</b>
-            </p>
+                Add To Cart
+              </Link>
+            </div>
           </div>
         </div>
       );
     });
     return (
-      <div className="container">
-        <h3 className="center">Our items</h3>
-        <div className="box">{itemList}</div>
+      <div className="container section-spacer">
+        <h1 style={{textAlign: "center"}}>Product List</h1>
+        <div className="row">{itemList}</div>
       </div>
     );
   }
