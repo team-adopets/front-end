@@ -26,10 +26,10 @@ const Footercomp = () => {
             <h4 className="mt-lg-0 mt-sm-3">Layanan</h4>
             <ul className="m-0 p-0">
               <li>
-                <a href="#">Tentang Kami</a>
+                <a href="/about">Tentang Kami</a>
               </li>
               <li>
-                <a href="#">Kebijakan Privasi</a>
+                <a href="/about">Kebijakan Privasi</a>
               </li>
               <li>
                 <a href="#">Persyaratan dan Kebijakan</a>

@@ -149,9 +149,9 @@ class Signup extends Component {
                       </button>
                     </div>
                     <p>
-                      Sudah punya akun? Login di{" "}
+                      Already have an account? Login{" "}
                       <Link to="/signin" className="forget-pwd">
-                        sini
+                        here
                       </Link>
                     </p>
                   </form>

@@ -102,9 +102,9 @@ class Signin extends Component {
                       )}
                     </div>
                     <p>
-                      "Belum punya akun? register di
+                      Don't have an account? Register{" "}
                       <Link to="/signup" href="" className="forget-pwd">
-                        sini
+                        here
                       </Link>
                     </p>
                     <div>

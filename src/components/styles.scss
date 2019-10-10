@@ -80,8 +80,9 @@ h5 {
   text-transform: capitalize;
   margin-top: 15px;
 }
-.store-link a {
+.store-link:hover {
   text-decoration: none;
+  color: #91b237;
 }
 
 .store-link:after {
@@ -212,6 +213,10 @@ h5 {
   font-size: 12px;
   margin-top: -6px;
 }
+.forget-pwd:hover{
+  text-decoration: none;
+  color: black;
+}
 /* sign in end here */
 
 /* cart component */
@@ -224,6 +229,24 @@ h5 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+
+.go-shop{
+  height: 40px;
+  width: 100px;
+  background-color: #91b237;
+  border-radius: 5px;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* cart component end here */
@@ -268,7 +291,7 @@ $secondary-gray: #929292;
 .nav_link{
   color: black;
   text-decoration: none;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   margin-right: 20px;
 }
 .nav_link:hover{

@@ -6,7 +6,7 @@ import {
   addQuantity,
   subtractQuantity
 } from "../actions/cartAction";
-import "./styles.scss"
+import "./styles.scss";
 
 class Cart extends Component {
   //to remove the item completely
@@ -48,8 +48,8 @@ class Cart extends Component {
         );
       })
     ) : (
-      <div className="container" style={{ textAlign: "center" }}>
-        <p>Nothing</p>
+      <div className="container center">
+      <img src="/assets/images/empty-cart.png" alt="" style={{height: "300px"}}/>
       </div>
     );
     return (
