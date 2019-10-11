@@ -28,7 +28,6 @@ class Navbarcomp extends React.Component {
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
-
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">

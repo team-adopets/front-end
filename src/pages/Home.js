@@ -11,6 +11,7 @@ import {
   faPiggyBank,
   faGifts
 } from "@fortawesome/free-solid-svg-icons";
+import Productlist from "./Productlist";
 
 class Home extends Component {
   render() {
@@ -57,21 +58,11 @@ class Home extends Component {
             </div>
           </div>
         </section>
-        <section className="trending-product section-spacer">
+        <section className="trending-product">
         <ScrollAnimation animateIn="slideInLeft" duration={2}>
           <div className="container">
             <div className="row">
-              <div className="col-12">
-                <div className="section-title text-center">
-                  <h2>Product Terbaru</h2>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <Productitem name="Thomas" price="1500" species="Purebred"/>
-              <Productitem name="Thomas" price="1500" species="Purebred"/>
-              <Productitem name="Thomas" price="1500" species="Purebred"/>
+              <Productlist/>
             </div>
           </div>
           </ScrollAnimation>

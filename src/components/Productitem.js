@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./styles.scss";
 
 const Productitem = props => {
@@ -6,8 +7,15 @@ const Productitem = props => {
     <div className="col-md-4 col-sm-4 mb-30">
       <div className="product-item">
         <div className="product-thumb overlay">
-          <img className="imgItem" src={props.imgUrl} alt=""/>
-          <div className="add-keranjang">Masukan Keranjang</div>
+          <img className="imgItem" src={props.imgUrl} alt="" />
+          <div
+            className="add-keranjang"
+            // onClick={() => {
+            //   this.handleClick(item.id);
+            // }}
+          >
+            Masukan Keranjang
+          </div>
         </div>
 
         <div className="product-caption">
@@ -22,4 +30,5 @@ const Productitem = props => {
   );
 };
 
-export default Productitem;
+
+export default Productitem

@@ -38,7 +38,7 @@ class Signin extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("");
+      this.props.history.push("/");
     }
   }
 
@@ -133,7 +133,6 @@ Signin.propTypes = {
 };
 
 const mapStateToProps = state => (
-  console.log(state, "state to props"),
   {
   auth: state.auth,
   errors: state.errors

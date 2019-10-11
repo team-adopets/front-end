@@ -9,7 +9,6 @@ class Productlist extends Component {
   };
 
   render() {
-    console.log(this.props.items, "props");
     const { items } = this.props;
     let itemList = items.map(item => {
       return (
@@ -21,14 +20,14 @@ class Productlist extends Component {
               <p className="card-text">{item.desc}</p>
               <p className="card-text-2">Price: {item.price}</p>
               <Link
-                to="/product_desc"
+                to="/product-desc"
                 className="btn btn-outline-success mr-10"
               >
                 Details
               </Link>
               <Link
-                to="/cart"
                 className="btn btn-outline-dark"
+                to="/cart"
                 onClick={() => {
                   this.handleClick(item.id);
                 }}

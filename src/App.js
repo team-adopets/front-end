@@ -3,14 +3,14 @@ import Navbarcomp from "./components/Navbarcomp";
 import Productlist from "./pages/Productlist";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Footercom from "./components/Footercomp";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import Cartcomp from "./components/Cartcomp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PrivateRoute from "./helper/PrivateRoute";
 
 import "./App.scss";
-import Cartcomp from "./components/Cartcomp";
 
 export default function App() {
   return (
@@ -18,27 +18,12 @@ export default function App() {
       <div>
       <Navbarcomp />
       <Switch>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-        <Route path="/about">
-          <About/>
-        </Route>
-        <Route path="/product">
-          <Productlist/>
-        </Route>
-        <Route path="/contact">
-          <Contact/>
-        </Route>
-        <Route path="/signin">
-          <Signin/>
-        </Route>
-        <Route path="/signup">
-          <Signup/>
-        </Route>
-        <Route path="/cart">
-          <Cartcomp/>
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/product" component={Productlist} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <PrivateRoute path="/cart" component={Cartcomp} />
       </Switch>
       <Footercom />
       </div>
