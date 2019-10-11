@@ -5,7 +5,7 @@ import {
   removeItem,
   addQuantity,
   subtractQuantity
-} from "../actions/cartAction";
+} from "../Actions/Cart";
 import "./styles.scss";
 
 class Cart extends Component {

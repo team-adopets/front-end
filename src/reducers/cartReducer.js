@@ -3,14 +3,14 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY
-} from "../actions/types";
+} from "../Actions/ActionTypes";
 
-import Item1 from "../assets/item1.jpg";
-import Item2 from "../assets/item2.jpg";
-import Item3 from "../assets/item3.jpg";
-import Item4 from "../assets/item4.jpg";
-import Item5 from "../assets/item5.jpg";
-import Item6 from "../assets/item6.jpg";
+import Item1 from "../Assets/item1.jpg";
+import Item2 from "../Assets/item2.jpg";
+import Item3 from "../Assets/item3.jpg";
+import Item4 from "../Assets/item4.jpg";
+import Item5 from "../Assets/item5.jpg";
+import Item6 from "../Assets/item6.jpg";
 
 const initState = {
   items: [

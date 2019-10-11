@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../actions/cartAction";
+import { addToCart } from "../Actions/Cart";
 import { Link } from "react-router-dom"
 import "./styles.scss";
 class Productlist extends Component {

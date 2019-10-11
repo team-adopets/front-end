@@ -1,2 +1,2 @@
-export * from "./regisAction"
+export * from "./Registration"
 export * from "./cartAction"

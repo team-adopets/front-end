@@ -5,3 +5,5 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const ADD_SHIPPING = 'ADD_SHIPPING';
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_SINGLE_PRODUCT = 'GET_SINGLE_PRODUCT';

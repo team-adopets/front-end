@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import errorReducer from './errorReducer';
-import regisReducer from "./registrationReducer"
-import cartReducer from "./cartReducer"
+import errorReducer from './ErrorReducer';
+import regisReducer from "./RegistrationReducer"
+import cartReducer from "./CartReducer"
 export default combineReducers({
     errors: errorReducer,
     auth: regisReducer,
