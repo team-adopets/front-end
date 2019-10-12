@@ -1,27 +1,25 @@
-import {GET_PRODUCTS, GET_SINGLE_PRODUCT} from "../Actions/ActionTypes"
+import {
+  GET_PRODUCTS,
+  GET_SINGLE_PRODUCT,
+} from "../Actions/ActionTypes";
 
-const initialState = {
-    data: [],
-    checkoutItem:[],
-}
+const initialState = {};
 
+const productReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload
+      };
+    case GET_SINGLE_PRODUCT:
+      return {
+        ...state,
+        product: action.payload
+      };
+      default:
+      return state
+  }
+};
 
-
-const productReducer = (state=initialState, action) => {
-    switch (action.type) {
-        case GET_PRODUCTS:
-            return {
-                ...state,
-                products : action.payload
-            }
-        case GET_SINGLE_PRODUCT:
-            return{
-                ...state,
-                product : action.payload
-            }
-        default:
-            return state;
-    }
-}
-
-export default productReducer
+export default productReducer;

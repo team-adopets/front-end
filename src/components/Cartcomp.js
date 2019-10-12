@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {
-  removeItem,
-  addQuantity,
-  subtractQuantity
+  removeItem
 } from "../Actions/Cart";
 import "./styles.scss";
 
@@ -54,14 +52,15 @@ class Cart extends Component {
     return (
       <div className="container section-spacer">
         <div className="row">{addedItems}</div>
+        <div>
+          <p>Total : {}</p>
+        </div>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  console.log(state, "data state");
-
   return {
     items: state.cart.addedItems
   };
@@ -71,12 +70,6 @@ const mapDispatchToProps = dispatch => {
   return {
     removeItem: id => {
       dispatch(removeItem(id));
-    },
-    addQuantity: id => {
-      dispatch(addQuantity(id));
-    },
-    subtractQuantity: id => {
-      dispatch(subtractQuantity(id));
     }
   };
 };

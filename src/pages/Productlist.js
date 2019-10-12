@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addToCart } from "../Actions/Cart";
-
 import "./styles.scss";
 
 class Productlist extends Component {
-  handleAddToCart = id => {
-    this.props.addToCart(id);
-  };
+  // handleAddToCart = id => {
+  //   this.props.addToCart(id);
+  // };
+  handleAddProductToCart = id => {
+    this.props.addProductToCart(id)
+  }
   handleProductDesc = id => {
-    this.props.productDesc(id)
+    this.props.getProduct(id)
   }
 
   render() {
@@ -31,9 +32,11 @@ class Productlist extends Component {
               <div
                 className="btn btn-outline-success"
                 // to="/cart"
-                onClick={() => {
-                  this.handleAddToCart(item.id);
-                }}
+                // onClick={() => {
+                //   this.handleAddToCart(item.id);
+                // }}
+
+                /* onClick={this.handleAddProductToCart(item.id)} */
               >
                 Add To Cart
               </div>
@@ -59,9 +62,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addToCart: id => {
-      dispatch(addToCart(id));
-    },
+    // addToCart: id => {
+    //   dispatch(addToCart(id));
+    // },
   };
 };
 
