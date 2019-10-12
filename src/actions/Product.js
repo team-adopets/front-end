@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_PRODUCTS, GET_SINGLE_PRODUCT } from "./ActionTypes";
 
 export const getProducts = () => async dispatch => {
-    let products = await axios.get(`http://localhost:8888/api/products/`)
+    let products = await axios.get(`http://localhost:3000/api/products/`)
     if (!products) {
        return
     } else {
@@ -14,7 +14,7 @@ export const getProducts = () => async dispatch => {
 };
 
 export const getProduct = id => async dispatch => {
-  let product = await axios.get(`http://localhost:8888/api/products/${id}`);
+  let product = await axios.get(`http://localhost:3000/api/products/${id}`);
   if (!product) {
     return 
   } else {

@@ -1,5 +1,5 @@
 import { USER_LOGIN } from "../Actions/ActionTypes";
-import isEmpty from "../Helpers/validation"
+import isEmpty from "../Helpers/Validation"
 
 const initialState = {
   isAuthenticated: false,

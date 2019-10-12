@@ -1,7 +1,13 @@
 import {GET_PRODUCTS, GET_SINGLE_PRODUCT} from "../Actions/ActionTypes"
 
+const initialState = {
+    data: [],
+    checkoutItem:[],
+}
 
-const productReducer = (state={}, action) => {
+
+
+const productReducer = (state=initialState, action) => {
     switch (action.type) {
         case GET_PRODUCTS:
             return {
