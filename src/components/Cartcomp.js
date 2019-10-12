@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import {
   removeItem,
   addQuantity,
@@ -35,7 +34,7 @@ class Cart extends Component {
               <p className="card-text">{item.desc}</p>
               <p className="card-text2">Price: {item.price}</p>
               <a
-                href="#"
+                href="/cart"
                 onClick={() => {
                   this.handleRemove(item.id);
                 }}

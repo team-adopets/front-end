@@ -1,5 +1,6 @@
 import React from "react";
-// import Addpost from "./Addpost";
+import { Link } from "react-router-dom"
+
 import "./styles.scss"
 
 const Footercomp = () => {
@@ -8,34 +9,34 @@ const Footercomp = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-5 col-xs-12 about-company">
-            <h2>Brand Logo</h2>
+            <h2>AdoPet</h2>
             <p>
-             Adopet adalah tempat dimana anda dan sekeluarga ingin mencari dan mengadopsi anjing yang lengkap,
+             Adopet adalah tempat dimana anda dan sekeluarga dapat mencari dan mengadopsi anjing yang lengkap,
              dapat dipercaya, dan premium{" "}
             </p>
             <p>
-              <a href="#">
+              <Link to="/">
                 <i className="fa fa-facebook-square mr-1"></i>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/">
                 <i className="fa fa-linkedin-square"></i>
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-lg-3 col-xs-12 links">
             <h4 className="mt-lg-0 mt-sm-3">Layanan</h4>
             <ul className="m-0 p-0">
               <li>
-                <a href="/about">Tentang Kami</a>
+                <Link href="/about">Tentang Kami</Link>
               </li>
               <li>
-                <a href="/about">Kebijakan Privasi</a>
+                <Link>Kebijakan Privasi</Link>
               </li>
               <li>
-                <a href="#">Persyaratan dan Kebijakan</a>
+                <Link>Persyaratan dan Kebijakan</Link>
               </li>
               <li>
-                <a href="#">Kebijakan Penukaran dan Pengembalian</a>
+                <Link>Kebijakan Penukaran dan Pengembalian</Link>
               </li>
             </ul>
           </div>
@@ -53,7 +54,7 @@ const Footercomp = () => {
         <div className="row mt-5">
           <div className="col copyright">
             <p className="">
-              <small className="text-white-50">© 2019. All Rights Reserved.</small>
+              <small className="text-black-50">© 2019. All Rights Reserved.</small>
             </p>
           </div>
         </div>

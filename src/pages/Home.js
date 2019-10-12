@@ -4,7 +4,6 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 import Bannercomp from "../Components/Bannercomp";
 import ServicePolicy from "../Components/ServicePolicy";
-import Productitem from "../Components/Productitem";
 
 import {
   faHeadset,
@@ -60,11 +59,11 @@ class Home extends Component {
         </section>
         <section className="trending-product">
         <ScrollAnimation animateIn="slideInLeft" duration={2}>
-          <div className="container">
-            <div className="row">
+          {/* <div className="container"> */}
+            {/* <div className="row"> */}
               <Productlist/>
-            </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
           </ScrollAnimation>
         </section>
       </main>

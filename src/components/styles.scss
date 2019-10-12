@@ -20,7 +20,6 @@ h5 {
   margin-block-end: 1.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-top: 20px;
   // font-weight: bold;
 }
 
@@ -206,6 +205,11 @@ h5 {
   padding: 10px 20px;
   border-radius: 0;
   background-color: $primary-color;
+}
+.btn__bg:hover{
+  // border-color: #242424;
+  background-color: #ddd;
+  color: #91b237;
 }
 
 .forget-pwd {

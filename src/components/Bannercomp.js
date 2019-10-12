@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import ScrollAnimation from "react-animate-on-scroll";
 
 import "./styles.scss";
@@ -13,9 +14,9 @@ const Bannercomp = props => {
           </div>
           <div className="banner-content">
             <h4>{props.banner_desc}</h4>
-            <a className="store-link" href="#">
+            <Link className="store-link" to="/signup">
               Daftar Sekarang
-            </a>
+            </Link>
           </div>
         </div>
       </ScrollAnimation>

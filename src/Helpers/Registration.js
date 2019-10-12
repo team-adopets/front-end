@@ -53,7 +53,7 @@ function handleResponse (response) {
 };
 
 
-export const userHelper = {
+export const regisHelper = {
   login,
   logout,
   register,

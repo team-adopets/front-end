@@ -1,39 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addToCart } from "../Actions/Cart";
-import { Link } from "react-router-dom"
+
 import "./styles.scss";
+
 class Productlist extends Component {
-  handleClick = id => {
+  handleAddToCart = id => {
     this.props.addToCart(id);
   };
+  handleProductDesc = id => {
+    this.props.productDesc(id)
+  }
 
   render() {
     const { items } = this.props;
     let itemList = items.map(item => {
       return (
-        <div className="col-md-4 col-sm-4 mt-30">
+        <div className="col-md-4 col-sm-4 mt-30" onClick={() => this.handleAddToCart(item.id)}>
           <div className="card" style={{ width: "18rem" }}>
             <img src="" className="card-img-top" alt={item.title} />
             <div className="card-body">
               <h5 className="card-title">{item.title}</h5>
               <p className="card-text">{item.desc}</p>
               <p className="card-text-2">Price: {item.price}</p>
-              <Link
-                to="/product-desc"
-                className="btn btn-outline-success mr-10"
+              <div
+                className="btn btn-outline-dark mr-10"
               >
                 Details
-              </Link>
-              <Link
-                className="btn btn-outline-dark"
-                to="/cart"
+              </div>
+              <div
+                className="btn btn-outline-success"
+                // to="/cart"
                 onClick={() => {
-                  this.handleClick(item.id);
+                  this.handleAddToCart(item.id);
                 }}
               >
                 Add To Cart
-              </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -58,7 +61,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addToCart: id => {
       dispatch(addToCart(id));
-    }
+    },
   };
 };
 
