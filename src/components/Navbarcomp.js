@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { logoutUser } from "../Actions/Registration";
+import { logoutUser } from "../actions/Registration";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 

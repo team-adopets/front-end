@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../Actions/Registration";
+import { loginUser } from "../actions/Registration";
 import classnames from "classnames";
 
 import "./styles.scss";

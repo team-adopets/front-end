@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Headercomp from "../Components/Headercomp";
+import Headercomp from "../components/Headercomp";
 import ScrollAnimation from "react-animate-on-scroll";
 
-import Bannercomp from "../Components/Bannercomp";
-import ServicePolicy from "../Components/ServicePolicy";
+import Bannercomp from "../components/Bannercomp";
+import ServicePolicy from "../components/ServicePolicy";
 
 import {
   faHeadset,

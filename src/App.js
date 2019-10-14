@@ -1,15 +1,15 @@
 import React from "react";
-import Navbarcomp from "./Components/Navbarcomp";
-import Productlist from "./Pages/Productlist";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Footercom from "./Components/Footercomp";
-import Signin from "./Components/Signin";
-import Signup from "./Components/Signup";
-import Cartcomp from "./Components/Cartcomp";
-import ProductDesc from  "./Components/ProductDesc";
+import Navbarcomp from "./components/Navbarcomp";
+import Productlist from "./pages/Productlist";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Footercom from "./components/Footercomp";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
+import Cartcomp from "./components/Cartcomp";
+import ProductDesc from  "./components/ProductDesc";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PrivateRoute from "./Helpers/PrivateRoute";
+import PrivateRoute from "./helpers/PrivateRoute";
 
 import "./App.scss";
 
