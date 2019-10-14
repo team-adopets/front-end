@@ -9,7 +9,7 @@ import Signup from "./components/Signup";
 import Cartcomp from "./components/Cartcomp";
 import ProductDesc from  "./components/ProductDesc";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PrivateRoute from "./helpers/PrivateRoute";
+import PrivateRoute from "./helper/PrivateRoute";
 
 import "./App.scss";
 
