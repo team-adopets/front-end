@@ -1,42 +1,40 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addProductToCart, getProduct, getProducts } from "../Actions/Product"
+
 import "./styles.scss";
 
 class Productlist extends Component {
-  // handleAddToCart = id => {
-  //   this.props.addToCart(id);
-  // };
-  handleAddProductToCart = id => {
-    this.props.addProductToCart(id)
+
+  componentDidMount(){
+    this.props.getProducts()
   }
-  handleProductDesc = id => {
-    this.props.getProduct(id)
+
+  handleProductDesc = (id, history) => {
+    this.props.getProduct(id, history )    
   }
 
   render() {
-    const { items } = this.props;
-    let itemList = items.map(item => {
+    const { products } = this.props;      
+    let itemList = products.map(product => {      
       return (
-        <div className="col-md-4 col-sm-4 mt-30" onClick={() => this.handleAddToCart(item.id)}>
-          <div className="card" style={{ width: "18rem" }}>
-            <img src="" className="card-img-top" alt={item.title} />
+        <div className="col-md-4 col-sm-4 mt-30" onClick={() => this.handleProductDesc(product._id)}>
+          <div className="card">
+            <img src={product.pictures[2].link} className="cardImg card-img-top" alt={product.title} />
             <div className="card-body">
-              <h5 className="card-title">{item.title}</h5>
-              <p className="card-text">{item.desc}</p>
-              <p className="card-text-2">Price: {item.price}</p>
+              <h5 className="card-title">{product.name}</h5>
+              <p className="">{product.ras}</p>
+              {/* <p className="card-text">{product.description}</p> */}
+              <p className="card-text-2">Price: {product.price}</p>
               <div
                 className="btn btn-outline-dark mr-10"
+                onClick={() => this.handleProductDesc(product._id, this.props.history)}
               >
                 Details
               </div>
               <div
                 className="btn btn-outline-success"
-                // to="/cart"
-                // onClick={() => {
-                //   this.handleAddToCart(item.id);
-                // }}
-
-                /* onClick={this.handleAddProductToCart(item.id)} */
+                /* onClick={this.handleAddToCart(product.id)} */
               >
                 Buy
               </div>
@@ -54,21 +52,12 @@ class Productlist extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => {  
   return {
-    items: state.cart.items
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    // addToCart: id => {
-    //   dispatch(addToCart(id));
-    // },
+    products: state.products.products
   };
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps, {getProduct, getProducts}
 )(Productlist);

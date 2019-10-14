@@ -3,21 +3,29 @@ import { GET_ERRORS, USER_LOGIN } from "./ActionTypes";
 import setAuthToken from "../Helpers/SetAuthToken";
 import jwt_decode from "jwt-decode";
 
+
 export const registerUser = (user, history) => dispatch => {
   axios
-    .post("http://localhost:3000/api/users/register", user)
-    .then(history.push("/signin"))
+    .post("https://database-project-adopets.herokuapp.com/api/users/register", user)
+    .then( result => { 
+      if (result.status === 200) {
+        history.push("/signin")
+      }
+      }
+    )
     .catch(err => {
+      console.log(err);
+      
       dispatch({
         type: GET_ERRORS,
-        payload: err
+        payload: err.response.data
       });
     });
 };
 
 export const loginUser = (user) => dispatch => {
   axios
-    .post("http://localhost:3000/api/users/login", user)
+    .post("https://database-project-adopets.herokuapp.com/api/users/login", user)
     .then(res => {
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
@@ -28,7 +36,7 @@ export const loginUser = (user) => dispatch => {
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
-        payload: err
+        payload: err.response.data
       });
     });
 };

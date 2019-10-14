@@ -7,6 +7,7 @@ import Footercom from "./Components/Footercomp";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
 import Cartcomp from "./Components/Cartcomp";
+import ProductDesc from  "./Components/ProductDesc";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./Helpers/PrivateRoute";
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/product" component={Productlist} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
+        <Route path="/productdesc" component={ProductDesc}/>
         <PrivateRoute path="/cart" component={Cartcomp} />
       </Switch>
       <Footercom />

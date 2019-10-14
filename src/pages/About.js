@@ -8,17 +8,15 @@ class About extends Component {
           <div className="row">
             <div className="col-xl-6 col-lg-6">
               <div className="about-text-wrap">
-              <h1 className="about-us-text">About Us</h1>
+                <h1 className="about-us-text">About Us</h1>
                 <h2>
                   <span>Kami menyediakan</span> produk yang terbaik untuk anda
                 </h2>
                 <p>
-                  Dr. Bebe adalah brand yang didedikasikan untuk Anda yang
-                  mendambakan perlengkapan tidur bayi premium, unik dan bergaya
-                  modern. Produk Dr. Bebe dibuat menggunakan material kualitas
-                  tinggi dan dikerjakan oleh tenaga profesional menggunakan
-                  teknologi Korea. Dr. Bebe selalu mengutamakan kualitas dalam
-                  kenyamanan dan keamanan bayi Anda.
+                  AdoPet adalah basis data hewan online yang dapat dicari
+                  yang membutuhkan rumah. Ini juga merupakan direktori dari
+                  hampir 11.000 tempat perlindungan hewan dan organisasi adopsi
+                  di seluruh daerah Jakarta.
                 </p>
               </div>
             </div>

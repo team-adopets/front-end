@@ -37,9 +37,9 @@ class Cart extends Component {
     return (
       <div className="container section-spacer">
         <div className="row">{addedItems}</div>
-        <div>
+        {/* <div>
           <p>Total : {}</p>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -47,7 +47,7 @@ class Cart extends Component {
 
 const mapStateToProps = state => {
   return {
-    items: state.cart.addedItems
+    items: state.products.checkoutItems
   };
 };
 

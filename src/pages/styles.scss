@@ -28,6 +28,12 @@ $secondary-gray: #929292;
   margin-right: 50px;
 }
 
+.cardImg {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+}
+
 .about-image-wrap:after {
   border: 5px solid var(--main-color);
   content: "";
