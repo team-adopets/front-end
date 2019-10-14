@@ -23,7 +23,7 @@ class Home extends Component {
             <div className="row mb-30">
               <Bannercomp
                 banner_title="Produk Populer"
-                banner_desc="Golden Retriever"
+                banner_desc="Beagle"
               />
               <Bannercomp
                 banner_title="Semua Produk"
