@@ -1,25 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  removeItem
-} from "../Actions/Cart";
 import "./styles.scss";
 
 class Cart extends Component {
-  //to remove the item completely
-  handleRemove = id => {
-    this.props.removeItem(id);
-  };
-  //to add the quantity
-  handleAddQuantity = id => {
-    this.props.addQuantity(id);
-  };
-  //to substruct from the quantity
-  handleSubtractQuantity = id => {
-    this.props.subtractQuantity(id);
-  };
+
   render() {
-    console.log(this.props, "this.props");
 
     let addedItems = this.props.items.length ? (
       this.props.items.map(item => {
@@ -66,15 +51,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    removeItem: id => {
-      dispatch(removeItem(id));
-    }
-  };
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
 )(Cart);

@@ -38,7 +38,7 @@ class Productlist extends Component {
 
                 /* onClick={this.handleAddProductToCart(item.id)} */
               >
-                Add To Cart
+                Buy
               </div>
             </div>
           </div>
