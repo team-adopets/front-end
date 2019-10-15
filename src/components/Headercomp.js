@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom"
+
 import "./styles.scss";
 
 const Headercomp = () => {
- 
   return (
     <section className="site-blocks-cover overflow-hidden bg-light">
       <div className="container">
@@ -14,11 +15,14 @@ const Headercomp = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
                 odio exercitationem iste, excepturi similique omnis.
               </p>
-              <p>
+              {/* <p>
                 <button className="btn_adop">
                   Register
                 </button>
-              </p>
+              </p> */}
+              <Link to="/signup" className="btn__bg nav_link">
+                Register
+              </Link>
             </div>
           </div>
           <div className="col-md-5 align-self-center text-center text-md-right">

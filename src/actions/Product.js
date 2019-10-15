@@ -15,9 +15,7 @@ export const getProducts = () => async dispatch => {
 
 export const getProduct = (id, history) => async dispatch => {
   try {
-    let product = await axios.get(`https://database-project-adopets.herokuapp.com/api/product/${id}`); 
-    console.log(history, "action history");
-    
+    let product = await axios.get(`https://database-project-adopets.herokuapp.com/api/product/${id}`);     
     if (product.status === 200) {
         dispatch({ type: GET_PRODUCT, payload: product.data.result})
         history.push("/productdesc")

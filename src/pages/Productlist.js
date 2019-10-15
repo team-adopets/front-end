@@ -24,7 +24,6 @@ class Productlist extends Component {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <p className="">{product.ras}</p>
-              {/* <p className="card-text">{product.description}</p> */}
               <p className="card-text-2">Price: {product.price}</p>
               <div
                 className="btn btn-outline-dark mr-10"
