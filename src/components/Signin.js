@@ -132,11 +132,11 @@ Signin.propTypes = {
   errors: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => (
-  {
+const mapStateToProps = state => {
+  return{
   auth: state.auth,
   errors: state.errors
-});
+}};
 
 export default connect(
   mapStateToProps,

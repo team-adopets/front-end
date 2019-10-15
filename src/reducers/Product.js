@@ -25,40 +25,39 @@ const productReducer = (state = initialState, action) => {
         product: action.payload
       };
     case ADD_TO_CART:
-      let addedProduct = state.products.find(product => product.id === action.id);
-      //check if the action id exists in the addedItems
-      let existed_item = state.checkoutItems.find(product => action.id === product.id);
-      if (existed_item) {
-        return {
-          ...state,
-          total: state.total + addedProduct.price
-        };
-      } else {
-        //calculating the total
-        // let newTotal = state.total + addedProduct.price;
-        console.log(addedProduct, "added product");
-        
-        // return {
-        //   ...state,
-        //   checkoutItems: [...state.checkoutItems, addedProduct],
-        //   total: newTotal
-        // };
+      let productToAdd = state.products.find(
+        product => product._id === action.payload
+      );
+
+      return {
+        ...state,
+        checkoutItems: [...state.checkoutItems, productToAdd]
+      };
+
+    case REMOVE_ITEM: {
+      let newItem = state.checkoutItems.filter(
+        item => item._id !== action.payload
+      );
+      return {
+        ...state,
+        checkoutItems: newItem
       }
-
-    // case REMOVE_ITEM:
-    //   let itemToRemove = state.addedItems.find(item => action.id === item.id);
-    //   let new_items = state.addedItems.filter(item => action.id !== item.id);
-
-    //   //calculating the total
-    //   let newTotal = state.total - itemToRemove.price * itemToRemove.quantity;
-    //   return {
-    //     ...state,
-    //     checkoutItems: new_items,
-    //     total: newTotal
-    //   };
+    }
     default:
       return state;
   }
 };
 
 export default productReducer;
+
+// case REMOVE_ITEM:
+//   let itemToRemove = state.addedItems.find(item => action.id === item.id);
+//   let new_items = state.addedItems.filter(item => action.id !== item.id);
+
+//   //calculating the total
+//   let newTotal = state.total - itemToRemove.price * itemToRemove.quantity;
+//   return {
+//     ...state,
+//     checkoutItems: new_items,
+//     total: newTotal
+//   };

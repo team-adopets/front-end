@@ -14,11 +14,16 @@ class Productlist extends Component {
     this.props.getProduct(id, history )    
   }
 
+  handleAddToCart = (id, history) => {
+    this.props.addProductToCart(id, history)
+  }
+
   render() {
+    
     const { products } = this.props;      
     let itemList = products.map(product => {      
       return (
-        <div className="col-md-4 col-sm-4 mt-30" onClick={() => this.handleProductDesc(product._id)}>
+        <div className="col-md-4 col-sm-4 mt-30">
           <div className="card">
             <img src={product.pictures[2].link} className="cardImg card-img-top" alt={product.title} />
             <div className="card-body">
@@ -33,7 +38,7 @@ class Productlist extends Component {
               </div>
               <div
                 className="btn btn-outline-success"
-                /* onClick={this.handleAddToCart(product.id)} */
+                onClick={() => this.handleAddToCart(product._id, this.props.history)}
               >
                 Buy
               </div>
@@ -58,5 +63,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-  mapStateToProps, {getProduct, getProducts}
+  mapStateToProps, {getProduct, getProducts, addProductToCart}
 )(Productlist);

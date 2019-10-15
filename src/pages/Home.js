@@ -57,15 +57,15 @@ class Home extends Component {
             </div>
           </div>
         </section>
-        <section className="trending-product">
+        {/* <section className="trending-product">
         <ScrollAnimation animateIn="slideInLeft" duration={2}>
-          {/* <div className="container"> */}
-            {/* <div className="row"> */}
+          <div className="container">
+            <div className="row">
               <Productlist/>
-            {/* </div> */}
-          {/* </div> */}
+            </div>
+           </div>
           </ScrollAnimation>
-        </section>
+        </section> */}
       </main>
       </div>
     );
