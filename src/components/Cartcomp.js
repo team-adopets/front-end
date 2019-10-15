@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import {removeProductCart} from "../actions/Product"
+import { removeProductCart } from "../actions/Product";
 import { connect } from "react-redux";
 import "./styles.scss";
 
 class Cart extends Component {
-  handleRemove = (id) => {
-    this.props.removeProductCart(id)
+  handleRemove = id => {
+    this.props.removeProductCart(id);
+  };
+
+  handleCheckout = (data) => {
+    console.log(data, "check out data");
+    
   }
+
   render() {
     let addedItems = this.props.item.length ? (
       this.props.item.map(item => (
@@ -14,7 +20,7 @@ class Cart extends Component {
           <div className="card">
             <h5 className="card-header">Cart</h5>
             <img
-              // src={item.pictures[0].link}
+              src={item.pictures[0].link}
               className="card-img-top imgCart"
               alt={item.name}
             />
@@ -22,7 +28,12 @@ class Cart extends Component {
               <h5 className="card-title">{item.name}</h5>
               {/* <p className="card-text">{item.desc}</p> */}
               <p className="card-text2">Price: {item.price}</p>
-              <div className="btn btn-outline-danger" onClick={()=> this.handleRemove(item._id)}>Remove</div>
+              <div
+                className="btn btn-outline-danger"
+                onClick={() => this.handleRemove(item._id)}
+              >
+                Remove
+              </div>
             </div>
           </div>
         </div>
@@ -38,10 +49,14 @@ class Cart extends Component {
     );
     return (
       <div className="container section-spacer">
-        <div className="row">{addedItems}</div>
-        {/* <div>
-          <p>Total : {}</p>
-        </div> */}
+        <div>
+          <div className="row">{addedItems}</div>
+        </div>
+        <div>
+          <div className="btn btn-outline-primary btn-lg btn-block" onClick={() => this.handleCheckout(this.props.item)}>
+            Checkout
+          </div>
+        </div>
       </div>
     );
   }
@@ -53,4 +68,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { removeProductCart })(Cart);
+export default connect(
+  mapStateToProps,
+  { removeProductCart }
+)(Cart);
