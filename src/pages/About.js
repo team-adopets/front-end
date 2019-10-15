@@ -10,7 +10,7 @@ class About extends Component {
               <div className="about-text-wrap">
                 <h1 className="about-us-text">About Us</h1>
                 <h2>
-                  <span>Kami menyediakan</span> produk yang terbaik untuk anda
+                  <span>Kami menyediakan</span> hewan peliharaan yang terbaik, sehat, dan pastinya lucu
                 </h2>
                 <p>
                   AdoPet adalah basis data hewan online yang dapat dicari

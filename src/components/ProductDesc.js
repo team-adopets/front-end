@@ -12,7 +12,7 @@ class ProductDesc extends Component {
         <div className="row">
           <div className="col-sm col-md">
             <div className="img-fluid">
-              <img className="imgDetail" src={this.props.product.pictures[1].link} alt="product" />
+              <img className="imgDetail" src={this.props.product.pictures[0].link} alt="product" />
             </div>
           </div>
           <div className="col-sm col-md">
@@ -33,7 +33,7 @@ class ProductDesc extends Component {
               </p>
               <h5 className="text-red">
                 <strong>
-                  price: <span>Rp</span>17.000.000
+                  price:{" "}{this.props.product.price}
                 </strong>
               </h5>
 
@@ -43,12 +43,27 @@ class ProductDesc extends Component {
                   className="btn btn-success"
                   // onClick={}
                 >
-                  Add To Cart
+                  Take Me Home
                 </button>
               </div>
             </div>
           </div>
-          {/* <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    product: state.products.product
+  };
+};
+
+export default connect(mapStateToProps)(ProductDesc);
+
+
+{/* <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
           <div className="related-product text-center">
             <h3>Related Pet</h3>
           </div>
@@ -88,60 +103,3 @@ class ProductDesc extends Component {
             </ScrollAnimation>
           </div>
         </div> */ }
-        </div>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    product: state.products.product
-  };
-};
-
-export default connect(mapStateToProps)(ProductDesc);
-
-{
-  /* <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-          <div className="related-product">
-            <h3>Related Pet</h3>
-          </div>
-          <div className="carousel">
-            <ScrollAnimation animateIn="fadeInLeft" duration={2}>
-              <Carousel>
-                <Carousel.Item>
-                  <img
-                    className="cardImg d-block w-100"
-                    src={this.props.product.pictures[0].link}
-                    alt="First slide"
-                    height="300px"
-                  />
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={this.props.product.pictures[1].link}
-                    alt="Third slide"
-                    height="300px"
-                  />
-
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={this.props.product.pictures[2].link}
-                    alt="Third slide"
-                    height="300px"
-                  />
-
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-              </Carousel>
-            </ScrollAnimation>
-          </div>
-        </div>
-      </div> */
-}

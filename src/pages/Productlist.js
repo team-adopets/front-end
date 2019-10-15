@@ -40,7 +40,7 @@ class Productlist extends Component {
                 className="btn btn-outline-success"
                 onClick={() => this.handleAddToCart(product._id, this.props.history)}
               >
-                Buy
+                Take Me Home
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ class Productlist extends Component {
     });
     return (
       <div className="container section-spacer">
-        <h1 style={{textAlign: "center"}}>Product List</h1>
+        {/* <h1 style={{textAlign: "center"}}>Product List</h1> */}
         <div className="row">{itemList}</div>
       </div>
     );

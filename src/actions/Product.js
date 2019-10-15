@@ -28,7 +28,8 @@ export const getProduct = (id, history) => async dispatch => {
 export const addProductToCart = (id, history) => dispatch => {  
    try {
      dispatch({ type: ADD_TO_CART, payload:id})
-     history.push("/cart")
+     alert("Yeay...")
+     history.push("/product")
    } catch (error) {
      dispatch({ type: GET_ERRORS, payload: error})
    }
