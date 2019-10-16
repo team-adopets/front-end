@@ -46,14 +46,14 @@ export const loginUser = user => async dispatch => {
       setAuthToken(token);
       const decoded = jwt_decode(token);
       dispatch(setLogin(decoded));
-      dispatch({ type: USER_REGISTER_SUCCESS, payload: false})
+      dispatch({ type: USER_LOGIN_SUCCESS, payload: false})
     })
     .catch(err => {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
       });
-      dispatch({ type: USER_REGISTER_FAIL, payload: false})
+      dispatch({ type: USER_LOGIN_FAIL, payload: false})
 
     });
 };
