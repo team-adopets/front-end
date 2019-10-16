@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../actions/Registration";
+import Spinner from "react-bootstrap/Spinner";
 import classnames from "classnames";
 
 import "./styles.scss";
@@ -19,8 +20,6 @@ class Signin extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  
-  
   handleInputChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -55,9 +54,8 @@ class Signin extends Component {
 
   render() {
     const { errors } = this.state;
-  
+
     return (
-      
       <div className="login section-spacer">
         <div className="container">
           <div className="member-area-from-wrap">
@@ -108,13 +106,27 @@ class Signin extends Component {
                       </Link>
                     </p>
                     <div>
+                      {this.props.auth.isRegis ? (
                         <button
                           onClick={this.handleSubmit}
                           className="btn__bg btn-block"
                         >
+                          <Spinner
+                            as="span"
+                            animation="border"
+                            size="sm"
+                            role="status"
+                            ar
+                          />
                           Sign In
                         </button>
-                      </div>
+                      ) : (
+                        <button
+                          onClick={this.handleSubmit}
+                          className="btn__bg btn-block"
+                        >Sign In</button>
+                      )}
+                    </div>
                   </form>
                 </div>
               </div>
@@ -133,13 +145,13 @@ Signin.propTypes = {
 };
 
 const mapStateToProps = state => {
-  return{
-  auth: state.auth,
-  errors: state.errors
-}};
+  return {
+    auth: state.auth,
+    errors: state.errors
+  };
+};
 
 export default connect(
   mapStateToProps,
   { loginUser }
 )(Signin);
-

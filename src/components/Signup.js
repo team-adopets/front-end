@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../actions/Registration";
+import Spinner from "react-bootstrap/Spinner";
 import classnames from "classnames";
 
 import PropTypes from "prop-types";
@@ -35,10 +36,8 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       password_confirm: this.state.password_confirm
-    };  
+    };
     this.props.registerUser(user, this.props.history);
- 
-    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -141,12 +140,27 @@ class Signup extends Component {
                       We'll never share your email, phone number, and password.
                     </small>
                     <div>
-                      <button
-                        onClick={this.handleSubmit}
-                        className="btn__bg btn-block"
-                      >
-                        Sign Up
-                      </button>
+                      {this.props.auth.isRegis ? (
+                        <button
+                          onClick={this.handleSubmit}
+                          className="btn__bg btn-block"
+                        >
+                        <Spinner
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          ar />
+                          Sign Up
+                        </button>
+                      ) : (
+                        <button
+                          onClick={this.handleSubmit}
+                          className="btn__bg btn-block"
+                        >
+                          Sign Up
+                        </button>
+                      )}
                     </div>
                     <p>
                       Already have an account? Login{" "}

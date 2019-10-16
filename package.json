@@ -26,7 +26,8 @@
     "react-scripts": "3.1.2",
     "redux": "^4.0.4",
     "redux-form": "^8.2.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sweetalert2": "^8.18.3"
   },
   "scripts": {
     "start": "react-scripts start",

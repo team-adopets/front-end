@@ -2,12 +2,15 @@ import {
   GET_PRODUCTS,
   GET_PRODUCT,
   ADD_TO_CART,
-  REMOVE_ITEM
+  REMOVE_ITEM,
+  GET_PRODUCTS_LOADING,
+  GET_PRODUCTS_SUCCESS,
 } from "../actions/ActionTypes";
 
 const initialState = {
   products: [],
   product: [],
+  isLoading: true,
   checkoutItems: [],
   total: 0
 };
@@ -19,11 +22,24 @@ const productReducer = (state = initialState, action) => {
         ...state,
         products: action.payload
       };
+
+    case GET_PRODUCTS_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload
+      };
+
+    case GET_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        isLoading: action.payload
+      };
     case GET_PRODUCT:
       return {
         ...state,
         product: action.payload
       };
+
     case ADD_TO_CART:
       let productToAdd = state.products.find(
         product => product._id === action.payload
@@ -41,7 +57,7 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         checkoutItems: newItem
-      }
+      };
     }
     default:
       return state;
@@ -49,15 +65,3 @@ const productReducer = (state = initialState, action) => {
 };
 
 export default productReducer;
-
-// case REMOVE_ITEM:
-//   let itemToRemove = state.addedItems.find(item => action.id === item.id);
-//   let new_items = state.addedItems.filter(item => action.id !== item.id);
-
-//   //calculating the total
-//   let newTotal = state.total - itemToRemove.price * itemToRemove.quantity;
-//   return {
-//     ...state,
-//     checkoutItems: new_items,
-//     total: newTotal
-//   };
