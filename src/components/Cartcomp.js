@@ -10,7 +10,7 @@ class Cart extends Component {
 
   handleCheckout = (data) => {
     console.log(data, "check out data");
-    
+    /* this.props.checkOut(data) */
   }
 
   render() {
@@ -70,5 +70,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { removeProductCart }
+  { removeProductCart, /* checkOut*/ }
 )(Cart);

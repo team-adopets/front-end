@@ -5,6 +5,9 @@ import {
   REMOVE_ITEM,
   GET_PRODUCTS_LOADING,
   GET_PRODUCTS_SUCCESS,
+  CHECKOUT_LOADING,
+  CHECKOUT_FAIL,
+  CHECKOUT_SUCCESS
 } from "../actions/ActionTypes";
 
 const initialState = {
@@ -58,7 +61,8 @@ const productReducer = (state = initialState, action) => {
         ...state,
         checkoutItems: newItem
       };
-    }
+    };
+    
     default:
       return state;
   }
