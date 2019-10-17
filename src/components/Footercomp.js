@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./styles.scss"
 
 const Footercomp = () => {
@@ -16,10 +19,10 @@ const Footercomp = () => {
             </p>
             <p>
               <Link to="/">
-                <i className="fa fa-facebook-square mr-1"></i>
+                <i className="fab fa-facebook mr-3"></i>
               </Link>
               <Link to="/">
-                <i className="fa fa-linkedin-square"></i>
+                <i className="fab fa-instagram mr-3"></i>
               </Link>
             </p>
           </div>
@@ -47,7 +50,7 @@ const Footercomp = () => {
               <i className="fa fa-phone mr-3"></i>(541) 754-3010
             </p>
             <p>
-              <i className="fa fa-envelope-o mr-3"></i>info@gmail.com
+              <i className="fa fa-envelope-o mr-3"></i>adopet@gmail.com
             </p>
           </div>
         </div>

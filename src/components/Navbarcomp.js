@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles.scss";
 
@@ -97,7 +97,7 @@ class Navbarcomp extends React.Component {
               <li className="nav-item">
                 <Link className="nav_link" to="/cart">
                   <FontAwesomeIcon
-                    icon={faShoppingCart}
+                    icon={faShoppingBag}
                     color="#91b237"
                     size="lg"
                   />

@@ -1,7 +1,18 @@
 import React, { Component } from "react";
 import "./styles.scss";
+import Lottie from 'react-lottie'
+import animationData from "../helper/6975-god-boy.json"
 class About extends Component {
+  
   render() {
+    const defaultOptions = {
+      loop: true,
+      autoplay: true, 
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     return (
       <div className="about section-spacer">
         <div className="container">
@@ -19,8 +30,11 @@ class About extends Component {
                 </p>
               </div>
             </div>
-            <div className="col-xl5 col-lg-6 ml-auto">
-           
+            <div className="col-xl5 col-lg-6">
+            <Lottie options={defaultOptions}
+              height={400}
+              width={400}
+            />
             </div>
           </div>
         </div>

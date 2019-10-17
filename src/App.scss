@@ -5,28 +5,28 @@ $gray: #e5e5e5;
 
 
 /* floating button */
-.fab {
-  width: 70px;
-  height: 70px;
-  background-color: #c82433;
-  border-radius: 50%;
-  box-shadow: 0 6px 10px 0 rgb(158, 157, 157);
-  transition: all 0.1s ease-in-out;
+// .fab {
+//   width: 70px;
+//   height: 70px;
+//   background-color: #c82433;
+//   border-radius: 50%;
+//   box-shadow: 0 6px 10px 0 rgb(158, 157, 157);
+//   transition: all 0.1s ease-in-out;
 
-  font-size: 50px;
-  color: white;
-  text-align: center;
-  line-height: 70px;
+//   font-size: 50px;
+//   color: white;
+//   text-align: center;
+//   line-height: 70px;
 
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-}
+//   position: fixed;
+//   right: 50px;
+//   bottom: 50px;
+// }
 
-.fab:hover {
-  box-shadow: 0 6px 14px 0 rgb(156, 154, 154);
-  transform: scale(1.05);
-}
+// .fab:hover {
+//   box-shadow: 0 6px 14px 0 rgb(156, 154, 154);
+//   transform: scale(1.05);
+// }
 
 
 /* input add post */

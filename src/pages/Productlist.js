@@ -51,7 +51,7 @@ console.log(this.props.auth, "render ")
                 }
               >
                 About {product.name}
-              </div>
+              </div>          
               {this.props.auth ? (
                 <div
                   className="btn btn-outline-success"
