@@ -13,7 +13,7 @@ class Navbarcomp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
+      isOpen: false
     };
   }
 
@@ -39,8 +39,12 @@ class Navbarcomp extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-            <img src="assets/images/logo.png" alt="logo" style={{height: "80px", width:"80px"}}/>
+          <a className="navbar-brand" href="#">
+            <img
+              src="assets/images/logo.png"
+              alt="logo"
+              style={{ height: "80px", width: "80px" }}
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -53,9 +57,8 @@ class Navbarcomp extends React.Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          
+
           <div className="collapse navbar-collapse" id="navbarNav">
-        
             <ul className="nav navbar-nav">
               <li className="nav-item">
                 <Link className="nav_link" to="/">
@@ -72,7 +75,6 @@ class Navbarcomp extends React.Component {
                   About
                 </Link>
               </li>
-            
             </ul>
             {/* <form className="form-inline my-2 my-lg-0">
               <input className="form-control mr-sm-2" name="search" value={this.state.search} onChange={this.handleChange} type="search" placeholder="Search" aria-label="Search"/>
@@ -101,6 +103,9 @@ class Navbarcomp extends React.Component {
                     color="#91b237"
                     size="lg"
                   />
+                  <span class="badge badge-pill badge-success">
+                    {this.props.checkoutItem.length}
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -117,7 +122,8 @@ Navbarcomp.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  checkoutItem: state.products.checkoutItems
 });
 
 export default withRouter(
