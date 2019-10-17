@@ -10,10 +10,9 @@ const Headercomp = () => {
         <div className="row">
           <div className="col-md-5 mr-auto align-self-center text-center text-md-left">
             <div className="intro-text">
-              <h1 className="title-header">We Love Dogs</h1>
+              <h1 className="title-header">Where Pets Find Their People</h1>
               <p className="mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                odio exercitationem iste, excepturi similique omnis.
+              Thousands of adoptable pets are looking for people. People like you.
               </p>
               {/* <p>
                 <button className="btn_adop">

@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  AlertDelete,
   AlertAddToCart
 } from "../helper/Alert";
 

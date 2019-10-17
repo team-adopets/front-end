@@ -40,7 +40,7 @@ class Navbarcomp extends React.Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="assets/images/logo.png" alt="logo" style={{height: "80px", width:"80px"}} srcset=""/>
+            <img src="assets/images/logo.png" alt="logo" style={{height: "80px", width:"80px"}}/>
           </a>
           <button
             className="navbar-toggler"
@@ -74,9 +74,9 @@ class Navbarcomp extends React.Component {
               </li>
             
             </ul>
-            {/* <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" name="search" value={this.state.search} onChange={this.handleChange} type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            {/* <form className="form-inline my-2 my-lg-0">
+              <input className="form-control mr-sm-2" name="search" value={this.state.search} onChange={this.handleChange} type="search" placeholder="Search" aria-label="Search"/>
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form> */}
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Headercomp from "../components/Headercomp";
-import ScrollAnimation from "react-animate-on-scroll";
 
 import Bannercomp from "../components/Bannercomp";
 import ServicePolicy from "../components/ServicePolicy";
@@ -10,7 +9,6 @@ import {
   faPiggyBank,
   faGifts
 } from "@fortawesome/free-solid-svg-icons";
-import Productlist from "./Productlist";
 
 class Home extends Component {
   render() {
@@ -22,15 +20,15 @@ class Home extends Component {
           <div className="container">
             <div className="row mb-30">
               <Bannercomp
-                banner_title="Produk Populer"
+                banner_title="Popular"
                 banner_desc="Beagle"
               />
               <Bannercomp
-                banner_title="Semua Produk"
+                banner_title="Favorite"
                 banner_desc="French Buldog"
               />
               <Bannercomp
-                banner_title="Produk Terbaru"
+                banner_title="Newest"
                 banner_desc="Shin Tzu"
               />
             </div>
