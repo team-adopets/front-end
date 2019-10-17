@@ -72,7 +72,8 @@ class Cart extends Component {
             <div className="card-body">
               <h5 className="card-title">{item.name}</h5>
               {/* <p className="card-text">{item.desc}</p> */}
-              <p className="card-text2">Price: {item.price}</p>
+              <p className="card-text2">{item.ras}</p>
+              <p className="card-text2">{item.age}</p>
               <div
                 className="btn btn-outline-danger"
                 onClick={ () => this.AlertDelete(item._id) }

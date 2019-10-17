@@ -2,21 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addProductToCart, getProduct, getProducts } from "../actions/Product";
 import Spinner from "react-bootstrap/Spinner";
+import { Popover, PopoverTitle, PopoverContent, Button, OverlayTrigger} from "react-bootstrap"
 import "./styles.scss";
 
 class Productlist extends Component {
   componentDidMount() {
     this.props.getProducts();
   }
-
-  //   AlertAddToCart = () => {
-  //     Swal.fire({
-  //         type: 'success',
-  //         title: 'Added To Cart',
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       })
-  // }
 
   handleProductDesc = (id, history) => {
     this.props.getProduct(id, history);
@@ -26,9 +18,17 @@ class Productlist extends Component {
     this.props.addProductToCart(id, history);
   };
 
+
   render() {
+    const popover = (
+      <Popover>
+        <PopoverContent>
+          You have to <strong>Register</strong> or <strong>login</strong> first
+        </PopoverContent>
+      </Popover>
+    );
+
     const { products, isLoading } = this.props;
-console.log(this.props.auth, "render ")
     let itemList = products.map(product => {
       return (
         <div className="col-md-4 col-sm-4 mt-30">
@@ -61,17 +61,12 @@ console.log(this.props.auth, "render ")
                 >
                   Take Me Home
                 </div>
+                
               ) : (
-                <button
-                  onClick={() =>
-                    this.handleProductDesc(product._id, this.props.history)
-                  }
-                  type="button"
-                  className="btn btn-outline-success mr-10"
-                  disabled
-                >
-                  Take me home
-                </button>
+                <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+                  <Button variant="success">Take me home</Button>
+                </OverlayTrigger>
+
               )}
             </div>
           </div>
