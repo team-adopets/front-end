@@ -15,7 +15,7 @@ const Bannercomp = props => {
           <div className="banner-content">
             <h4>{props.banner_desc}</h4>
             <Link className="store-link" to="/signup">
-              Daftar Sekarang
+              Register
             </Link>
           </div>
         </div>

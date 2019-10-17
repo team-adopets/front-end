@@ -5,6 +5,7 @@ import {
   REMOVE_ITEM,
   GET_PRODUCTS_LOADING,
   GET_PRODUCTS_SUCCESS,
+  CHECKOUT_CLEAR,
   // CHECKOUT_LOADING,
   // CHECKOUT_FAIL,
   // CHECKOUT_SUCCESS
@@ -62,6 +63,12 @@ const productReducer = (state = initialState, action) => {
         checkoutItems: newItem
       };
     };
+
+    case CHECKOUT_CLEAR:
+      return {
+        ...state,
+        checkoutItems: action.payload
+      }
     
     default:
       return state;

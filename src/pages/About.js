@@ -17,8 +17,7 @@ class About extends Component {
       <div className="about section-spacer">
         <div className="container">
           <div className="row">
-            <div className="col-xl-6 col-lg-6">
-              <div className="about-text-wrap">
+            <div className="col">
                 <h1 className="about-us-text">About Us</h1>
                 <h2>
                   <span>Kami menyediakan</span> hewan peliharaan yang terbaik, sehat, dan pastinya lucu
@@ -28,9 +27,8 @@ class About extends Component {
                   hewan peliharaan khususnya anjing. AdoPet perusahaan yang masih kecil dan berkembang. Dengan adanya AdoPet 
                   ini kiranya dapat membantu anda dan keluarga dapat menemukan hewan peliharaan khususnya anjing yang anda cari.  
                 </p>
-              </div>
             </div>
-            <div className="col-xl5 col-lg-6">
+            <div className="col">
             <Lottie options={defaultOptions}
               height={400}
               width={400}

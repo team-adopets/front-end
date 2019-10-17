@@ -39,18 +39,18 @@ class Home extends Component {
             <div className="row">
               <ServicePolicy
                 icon={faPiggyBank}
-                title="Pengembalian Uang"
+                title="Money back Guarante"
                 desc="30 Hari untuk pengembalian"
               />
               <ServicePolicy
                 icon={faHeadset}
-                title="Layanan Online"
-                desc="Kami melayani 8jam/hari"
+                title="Online Services"
+                desc="Online service 8 hour/day"
               />
               <ServicePolicy
                 icon={faGifts}
-                title="Promosi"
-                desc="Kupon dan diskon"
+                title="Promotion"
+                desc="Cupon and Discount"
               />
             </div>
           </div>
