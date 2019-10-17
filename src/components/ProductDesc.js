@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ScrollAnimation from "react-animate-on-scroll";
-import Carousel from "react-bootstrap/Carousel";
+import { addProductToCart } from "../actions/Product";
 
 import "./styles.scss";
 
 class ProductDesc extends Component {
-  
+  handleAddToCart = (id, history) => {
+    this.props.addProductToCart(id, history);
+  };
+
   
   render() {
     console.log(this.props.product, "product desc");
@@ -36,7 +38,7 @@ class ProductDesc extends Component {
               </p>
               <h5 className="text-red">
                 <strong>
-                  price:{" "}{this.props.product.price}
+                  Price:{" "}Rp.{" "}{this.props.product.price}
                 </strong>
               </h5>
 
@@ -44,7 +46,9 @@ class ProductDesc extends Component {
                 <button
                   type="button"
                   className="btn btn-success"
-                  // onClick={}
+                  onClick={() =>
+                  this.handleAddToCart(this.props.product._id, this.props.history)
+                }
                 >
                   Take Me Home
                 </button>
@@ -63,4 +67,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ProductDesc);
+export default connect(mapStateToProps, {addProductToCart})(ProductDesc);

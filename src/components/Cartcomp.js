@@ -9,7 +9,7 @@ import "./styles.scss";
 
 class Cart extends Component {
 
-  AlertDelete = () => {
+  AlertDelete = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: '#b22222',
@@ -28,7 +28,7 @@ class Cart extends Component {
       reverseButtons: true
     }).then((result) => {
       if (result.value) {
-        this.handleRemove()
+        this.handleRemove(id)
         swalWithBootstrapButtons.fire(
           'Deleted!',
           'Your file has been deleted.',
@@ -52,10 +52,10 @@ class Cart extends Component {
     this.props.removeProductCart(id)
   };
 
+ 
+
   handleCheckout = (data) => {
-    this.props.checkOut(data)
-    console.log(data, "item checkout");
-    
+    this.props.checkOut(data)    
   }
 
   render() {
@@ -75,9 +75,7 @@ class Cart extends Component {
               <p className="card-text2">Price: {item.price}</p>
               <div
                 className="btn btn-outline-danger"
-                onClick={
-                  () => this.AlertDelete(item._id)
-                  }
+                onClick={ () => this.AlertDelete(item._id) }
               >
                 Remove
               </div>
