@@ -11,7 +11,6 @@ class ProductDesc extends Component {
 
   
   render() {
-    console.log(this.props.product, "product desc");
     return (
       <div className="container section-spacer">
         <div className="row">
@@ -43,15 +42,27 @@ class ProductDesc extends Component {
               </h5>
 
               <div className="cart">
-                <button
-                  type="button"
-                  className="btn btn-success"
+              {this.props.auth ? (
+                <div
+                  className="btn btn-outline-success"
                   onClick={() =>
-                  this.handleAddToCart(this.props.product._id, this.props.history)
-                }
+                    this.handleAddToCart(this.props.product._id, this.props.history)
+                  }
                 >
                   Take Me Home
+                </div>
+              ) : (
+                <button
+                  onClick={() =>
+                    this.handleProductDesc(this.props.product._id, this.props.history)
+                  }
+                  type="button"
+                  className="btn btn-outline-success mr-10"
+                  disabled
+                >
+                  Take me home
                 </button>
+              )}
               </div>
             </div>
           </div>
@@ -63,7 +74,8 @@ class ProductDesc extends Component {
 
 const mapStateToProps = state => {
   return {
-    product: state.products.product
+    product: state.products.product,
+    auth: state.auth["isAuthenticated"]
   };
 };
 

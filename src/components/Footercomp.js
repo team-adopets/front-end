@@ -27,19 +27,16 @@ const Footercomp = () => {
             </p>
           </div>
           <div className="col-lg-3 col-xs-12 links">
-            <h4 className="mt-lg-0 mt-sm-3">Layanan</h4>
+            <h4 className="mt-lg-0 mt-sm-3">Services</h4>
             <ul className="m-0 p-0">
               <li>
-                <Link to="/about">Tentang Kami</Link>
+                <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link>Kebijakan Privasi</Link>
+                <Link to="/">Privacy policy</Link>
               </li>
               <li>
-                <Link>Persyaratan dan Kebijakan</Link>
-              </li>
-              <li>
-                <Link>Kebijakan Penukaran dan Pengembalian</Link>
+                <Link to="/">Requirements and Policies</Link>
               </li>
             </ul>
           </div>

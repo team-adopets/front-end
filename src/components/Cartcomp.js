@@ -61,7 +61,7 @@ class Cart extends Component {
   render() {
     let addedItems = this.props.item.length ? (
       this.props.item.map(item => (
-        <div className="col-md-4 col-sm-4">
+        <div className="col-md-4 col-sm-4" key={item._id}>
           <div className="card">
             <h5 className="card-header">Cart</h5>
             <img

@@ -39,7 +39,7 @@ class Navbarcomp extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
             <img src="assets/images/logo.png" alt="logo" style={{height: "80px", width:"80px"}}/>
           </a>
           <button
