@@ -13,10 +13,9 @@ class About extends Component {
                   <span>Kami menyediakan</span> hewan peliharaan yang terbaik, sehat, dan pastinya lucu
                 </h2>
                 <p>
-                  AdoPet adalah basis data hewan online yang dapat dicari
-                  yang membutuhkan rumah. Ini juga merupakan direktori dari
-                  hampir 11.000 tempat perlindungan hewan dan organisasi adopsi
-                  di seluruh daerah Jakarta.
+                  AdoPet adalah platform online untuk mencari hewan peliharaan khususnya "anjing". Dimana di AdoPet ini anda dapat mencari
+                  hewan peliharaan khususnya anjing. AdoPet perusahaan yang masih kecil dan berkembang. Dengan adanya AdoPet 
+                  ini kiranya dapat membantu anda dan keluarga dapat menemukan hewan peliharaan khususnya anjing yang anda cari.  
                 </p>
               </div>
             </div>

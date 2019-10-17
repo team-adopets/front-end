@@ -1,16 +1,61 @@
 import React, { Component } from "react";
-import { removeProductCart } from "../actions/Product";
+import { removeProductCart, checkOut } from "../actions/Product";
 import { connect } from "react-redux";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
+
 import "./styles.scss";
 
 class Cart extends Component {
+
+  AlertDelete = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: '#b22222',
+        cancelButton: '#91b237'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        this.handleRemove()
+        swalWithBootstrapButtons.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
+  
+  }
+
   handleRemove = id => {
-    this.props.removeProductCart(id);
+    this.props.removeProductCart(id)
   };
 
   handleCheckout = (data) => {
-    console.log(data, "check out data");
-    /* this.props.checkOut(data) */
+    this.props.checkOut(data)
+    console.log(data, "item checkout");
+    
   }
 
   render() {
@@ -30,7 +75,9 @@ class Cart extends Component {
               <p className="card-text2">Price: {item.price}</p>
               <div
                 className="btn btn-outline-danger"
-                onClick={() => this.handleRemove(item._id)}
+                onClick={
+                  () => this.AlertDelete(item._id)
+                  }
               >
                 Remove
               </div>
@@ -53,7 +100,8 @@ class Cart extends Component {
           <div className="row">{addedItems}</div>
         </div>
         <div>
-          <div className="btn btn-outline-primary btn-lg btn-block" onClick={() => this.handleCheckout(this.props.item)}>
+          <div className="btn btn-outline-primary btn-lg btn-block" onClick={
+            () => this.handleCheckout(this.props.item)}>
             Checkout
           </div>
         </div>
@@ -70,5 +118,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { removeProductCart, /* checkOut*/ }
+  { removeProductCart, checkOut }
 )(Cart);

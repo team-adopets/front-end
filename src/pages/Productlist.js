@@ -19,6 +19,8 @@ class Productlist extends Component {
 
   render() {
     const { products, isLoading } = this.props;
+    console.log(this.props, "render product list");
+    
     
     let itemList = products.map(product => {
       return (

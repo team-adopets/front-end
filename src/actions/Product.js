@@ -3,6 +3,7 @@ import {
   AlertDelete,
   AlertAddToCart
 } from "../helper/Alert";
+
 import {
   GET_PRODUCTS,
   GET_ERRORS,
@@ -86,12 +87,12 @@ export const removeProductCart = (id, history) => dispatch => {
       type: REMOVE_ITEM,
       payload: id
     });
-    AlertDelete();
+   
   } catch (error) {
     dispatch({
       type: GET_ERRORS,
       payload: error
-    });
+    })
   }
 };
 

@@ -13,7 +13,7 @@ class Navbarcomp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
 
@@ -22,6 +22,12 @@ class Navbarcomp extends React.Component {
       isOpen: !this.state.isOpen
     });
   };
+
+  // handleChange = (e) => {
+  //   this.setState({
+  //     [e.target.name] : e.target.value
+  //   })
+  // }
 
   onLogout = e => {
     e.preventDefault();
@@ -61,7 +67,12 @@ class Navbarcomp extends React.Component {
                   About
                 </Link>
               </li>
+            
             </ul>
+            {/* <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" name="search" value={this.state.search} onChange={this.handleChange} type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> */}
             <ul className="navbar-nav ml-auto">
               {isAuthenticated ? (
                 <li className="nav-item">

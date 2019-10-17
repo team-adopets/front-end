@@ -6,7 +6,10 @@ import Carousel from "react-bootstrap/Carousel";
 import "./styles.scss";
 
 class ProductDesc extends Component {
+  
+  
   render() {
+    console.log(this.props.product, "product desc");
     return (
       <div className="container section-spacer">
         <div className="row">
@@ -61,45 +64,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(ProductDesc);
-
-
-{/* <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-          <div className="related-product text-center">
-            <h3>Related Pet</h3>
-          </div>
-          <div className="carousel">
-            <ScrollAnimation animateIn="fadeInLeft" duration={2}>
-              <Carousel>
-                <Carousel.Item>
-                  <img
-                    className="cardImg d-block w-100"
-                    src={this.props.product.pictures[0].link}
-                    alt="First slide"
-                    height="300px"
-                  />
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={this.props.product.pictures[1].link}
-                    alt="Third slide"
-                    height="300px"
-                  />
-
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                  <img
-                    className="d-block w-100"
-                    src={this.props.product.pictures[2].link}
-                    alt="Third slide"
-                    height="300px"
-                  />
-
-                  <Carousel.Caption></Carousel.Caption>
-                </Carousel.Item>
-              </Carousel>
-            </ScrollAnimation>
-          </div>
-        </div> */ }
