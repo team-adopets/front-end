@@ -39,6 +39,9 @@ class Navbarcomp extends React.Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" alt="logo" style={{height: "80px", width:"80px"}} srcset=""/>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -50,7 +53,9 @@ class Navbarcomp extends React.Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          
           <div className="collapse navbar-collapse" id="navbarNav">
+        
             <ul className="nav navbar-nav">
               <li className="nav-item">
                 <Link className="nav_link" to="/">

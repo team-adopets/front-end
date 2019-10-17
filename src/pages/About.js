@@ -20,9 +20,7 @@ class About extends Component {
               </div>
             </div>
             <div className="col-xl5 col-lg-6 ml-auto">
-              <div className="about-img-wrap">
-                <img src="" alt="" />
-              </div>
+           
             </div>
           </div>
         </div>
