@@ -11,4 +11,10 @@ export const AlertAddToCart = () => {
       })
 }
 
+export const AlertCheckout = () => {
+  Swal.fire({
+    type: 'success', title: "Thank you :)", showConfirmButton: false, timer: 1500
+  })
+}
+
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import {
-  AlertAddToCart
+  AlertAddToCart, AlertCheckout
 } from "../helper/Alert";
 
 import {
@@ -110,6 +110,7 @@ export const checkOut = data => dispatch => {
         type: CHECKOUT_SUCCESS,
         payload: false
       });
+      AlertCheckout()
       dispatch({ type: CHECKOUT_CLEAR, payload: []})
     }
   } catch (error) {
