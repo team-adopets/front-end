@@ -12,26 +12,26 @@ class Cart extends Component {
   AlertDelete = (id) => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: '#b22222',
-        cancelButton: '#91b237'
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
       },
       buttonsStyling: false
     })
     
     swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: "You won't be able to take home if do this!",
+      text: "Are you sure",
       type: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText: 'Are you?',
+      cancelButtonText: 'Cancel!',
       reverseButtons: true
     }).then((result) => {
       if (result.value) {
         this.handleRemove(id)
         swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
+          'Removed',
+          'You so mean!',
           'success'
         )
       } else if (
@@ -40,7 +40,7 @@ class Cart extends Component {
       ) {
         swalWithBootstrapButtons.fire(
           'Cancelled',
-          'Your imaginary file is safe :)',
+          'You still want me :)',
           'error'
         )
       }
