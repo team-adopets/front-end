@@ -20,11 +20,11 @@ class About extends Component {
             <div className="col">
                 <h1 className="about-us-text">About Us</h1>
                 <h2>
-                  <span>Kami menyediakan</span> hewan peliharaan yang terbaik, sehat, dan pastinya lucu
+                  
+We provide the best pets, healthy, and certainly funny
                 </h2>
                 <p>
-                  AdoPet adalah platform online untuk mencari hewan peliharaan khususnya "anjing". AdoPet platform online yang masih kecil dan berkembang. Dengan adanya AdoPet 
-                  ini kiranya dapat membantu anda dan keluarga dapat menemukan hewan peliharaan khususnya anjing yang anda cari.  
+                AdoPet is an online platform for finding pets especially "dogs". AdoPet is still small and growing. With the existence of AdoPet this can help you and your family find the pet, especially the dog that you are looking for. 
                 </p>
             </div>
             <div className="col">
