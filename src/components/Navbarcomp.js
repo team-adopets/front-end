@@ -67,12 +67,12 @@ class Navbarcomp extends React.Component {
               </li>
               <li className="nav-item">
                 <Link className="nav_link" to="/product">
-                  Product
+                  Dog Breeds
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav_link" to="/about">
-                  About
+                  About Us
                 </Link>
               </li>
             </ul>
