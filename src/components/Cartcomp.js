@@ -55,7 +55,9 @@ class Cart extends Component {
  
 
   handleCheckout = (data) => {
-    this.props.checkOut(data)    
+    this.props.checkOut(data)
+    console.log(data, "data");
+        
   }
 
   render() {

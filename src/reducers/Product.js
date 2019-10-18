@@ -67,7 +67,7 @@ const productReducer = (state = initialState, action) => {
     case CHECKOUT_CLEAR:
       return {
         ...state,
-        checkoutItems: action.payload
+        checkoutItems: [...state.checkoutItems, action.payload]
       }
     
     default:
