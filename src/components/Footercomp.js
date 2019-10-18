@@ -14,8 +14,8 @@ const Footercomp = () => {
           <div className="col-lg-5 col-xs-12 about-company">
             <h2>AdoPet</h2>
             <p>
-             Adopet adalah tempat dimana anda dan sekeluarga dapat mencari dan mengadopsi anjing yang lengkap,
-             dapat dipercaya, dan premium{" "}
+             
+Adopet is a place where you and your family can find and adopt a complete, trustworthy and premium dog{" "}
             </p>
             <p>
               <Link to="/">
