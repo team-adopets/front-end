@@ -54,10 +54,10 @@ class Cart extends Component {
 
  
 
-  handleCheckout = (data) => {
-    this.props.checkOut(data)
-    console.log(data, "data");
-        
+  handleCheckout = (data, history) => {
+    this.props.checkOut(data, history)
+    console.log(history, "history");
+    
   }
 
   render() {
@@ -102,7 +102,7 @@ class Cart extends Component {
         </div>
         <div>
           <div className="btn btn-outline-primary btn-lg btn-block" onClick={
-            () => this.handleCheckout(this.props.item)}>
+            () => this.handleCheckout(this.props.item, this.props.history)}>
             Checkout
           </div>
         </div>

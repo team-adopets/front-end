@@ -95,24 +95,29 @@ export const removeProductCart = (id, history) => dispatch => {
   }
 };
 
-export const checkOut = data => dispatch => {
+export const checkOut = (data, history) => dispatch => {
   try {
     let dataToSend = axios.post(
       `https://database-project-adopets.herokuapp.com/api/checkout`,
       data
-    );
-    dispatch({
-      type: CHECKOUT_LOADING,
-      payload: true
-    });
-    if (dataToSend.status === 200) {
-      dispatch({
-        type: CHECKOUT_SUCCESS,
-        payload: false
-      });
-      AlertCheckout()
-      dispatch({ type: CHECKOUT_CLEAR, payload: []})
-    }
+    ).then(data => {
+      if (data.status === 200) {
+        dispatch({
+          type: CHECKOUT_SUCCESS,
+          payload: false
+        });
+        AlertCheckout()
+        history.push("/product");
+        // dispatch({ type: CHECKOUT_CLEAR, payload: []})
+      }
+    })
+    // dispatch({
+    //   type: CHECKOUT_LOADING,
+    //   payload: true
+    // });
+    console.log(dataToSend, "data to send");
+    
+    
   } catch (error) {
     dispatch({
       type: GET_ERRORS,
